@@ -12,6 +12,9 @@ function SignupPage() {
     return (
         
         <>
+        <h1>
+            User Signup
+        </h1>
         <div>
             <label >
                 <div>
