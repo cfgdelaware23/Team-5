@@ -16,8 +16,15 @@ let productSchema = new mongoose.Schema({
     priceDiscount: {
         type: Number,
         required: true
+    },
+    boughtFull: {
+        type: Number,
+        required: true,
+    },
+    boughtDiscount: {
+        type: Number,
+        required: true
     }
-},
- {timestamps: true})
+}, { timestamps: true })
 
 module.exports = mongoose.model("Product", productSchema)
