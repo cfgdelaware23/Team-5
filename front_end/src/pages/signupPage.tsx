@@ -11,7 +11,7 @@ function SignupPage() {
         <>
             <p>hello</p>
             <label>
-                <div>                
+                <div>
                     First Name:
                 </div>
 
@@ -23,7 +23,7 @@ function SignupPage() {
                     onChange={e => setFirstName(e.target.value)} />
             </label>
             <label>
-            <div>                
+                <div>
                     Last Name:
                 </div>
                 <textarea
@@ -34,7 +34,7 @@ function SignupPage() {
                     onChange={e => setLastName(e.target.value)} />
             </label>
             <label>
-            <div>                
+                <div>
                     Zip Code:
                 </div>
                 <textarea
