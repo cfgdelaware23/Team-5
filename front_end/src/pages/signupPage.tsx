@@ -85,6 +85,8 @@ function SignupPage() {
                     setFirstName('')
                     setLastName('')
                     setZipCode('')
+                    setEBT(false)  
+                    setSNAP(false)
                 }}>
                     Clear
                 </button>
