@@ -1,25 +1,53 @@
 import { useState } from 'react'
 
 
-
 function SignupPage() {
-  const [count, setCount] = useState(0)
-  const [firstName, setFirstName] = useState(0)
-  const [lastName, setLastName] = useState(0)
-  const [zipCode, setZipCode] = useState(0)
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [zipCode, setZipCode] = useState('')
 
 
-  return (
-    <>
-        <p>hello</p>
-        <textarea name="inputFirstName" rows={1} cols={40}/>
-        <textarea name="inputSecondName" rows={1} cols={40}/>
-        <div>        <textarea name="inputZipCode" rows={1} cols={10}/>
-</div>
+    return (
+        <>
+            <p>hello</p>
+            <label>
+                <div>                
+                    First Name:
+                </div>
+
+                <textarea
+                    name="inputFirstName"
+                    rows={1}
+                    cols={40}
+                    value={firstName}
+                    onChange={e => setFirstName(e.target.value)} />
+            </label>
+            <label>
+            <div>                
+                    Last Name:
+                </div>
+                <textarea
+                    name="inputSecondName"
+                    rows={1}
+                    cols={40}
+                    value={lastName}
+                    onChange={e => setLastName(e.target.value)} />
+            </label>
+            <label>
+            <div>                
+                    Zip Code:
+                </div>
+                <textarea
+                    name="inputZipCode"
+                    rows={1}
+                    cols={10}
+                    value={zipCode}
+                    onChange={e => setZipCode(e.target.value)} />
+            </label>
 
 
-    </>
-  )
+        </>
+    )
 }
 
 export default SignupPage
