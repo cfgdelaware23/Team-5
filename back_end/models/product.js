@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 
-let productSchem = new mongoose.Schema({
+let productSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -19,3 +19,5 @@ let productSchem = new mongoose.Schema({
     }
 },
  {timestamps: true})
+
+module.exports = mongoose.model("Product", productSchema)

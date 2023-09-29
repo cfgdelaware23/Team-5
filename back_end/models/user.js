@@ -11,10 +11,12 @@ let customerSchema = new mongoose.Schema({
     },
     address: {
         type: String,
-        required: true,
+        required: false,
     },
     isAdmin: {
         type: Boolean,
         required: true,
     }
 }, {timestamps: true})
+
+module.exports = mongoose.model("Customer", customerSchema)
