@@ -1,13 +1,14 @@
-// import { useState } from 'react'
+import { useState } from 'react'
+import SignupPage from './pages/signupPage'
 import './App.css'
 // import SideBar from './components/SideBar'
 
 function App() {
 
   return (
-    <>
-      <div className='bg-red-200 p-5'>test </div>
-      {/* <SideBar /> */}
+    <>  
+<SignupPage></SignupPage> 
+
     </>
   )
 }
