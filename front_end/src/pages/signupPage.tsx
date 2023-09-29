@@ -54,20 +54,23 @@ function SignupPage() {
                 </label>
             </div>
             <div>
+                <p> Please select all that apply:</p>
+            </div>
+            <div>
                 <label>
-                    <div>
+                    
                         EBT:
-                    </div>
+                    
                     <input
                         name="inputEBT"
                         type="checkbox"
                         checked={EBT}
                         onChange={e => setEBT(e.target.checked)} />
                 </label>
+            </div>
+            <div>
                 <label>
-                    <div>
-                        SNAP:
-                    </div>
+                        SNAP:  
                     <input
                         name="inputSNAP"
                         type="checkbox"
