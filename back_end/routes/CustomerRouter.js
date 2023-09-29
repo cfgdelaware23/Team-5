@@ -31,11 +31,11 @@ router.get("/retrieve_customer/:id", async (request, res) => {
     return;
 })
 
-router.get("/retrieve_customer", (request, res) => {
-    console.log(request.body);
-})
-
 router.post("/feedback_create", async (request, res) => {
+    let id = request.body.customerId
+    let feedback = request.body.feedbackPositive
+    let feedbackDescription = request.body.feedbackDescription
+
     console.log(request.body);
 })
 
