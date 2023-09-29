@@ -31,6 +31,10 @@ router.get("/retrieve_customer/:id", async (request, res) => {
     return;
 })
 
+router.get("/retrieve_customer", (request, res) => {
+    console.log(request.body);
+})
+
 router.post("/feedback_create", async (request, res) => {
     console.log(request.body);
 })
