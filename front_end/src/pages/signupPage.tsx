@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
 
+
+
 function SignupPage() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -8,9 +10,10 @@ function SignupPage() {
 
 
     return (
+        
         <>
-            <p>hello</p>
-            <label>
+        <div>
+            <label >
                 <div>
                     First Name:
                 </div>
@@ -44,8 +47,16 @@ function SignupPage() {
                     value={zipCode}
                     onChange={e => setZipCode(e.target.value)} />
             </label>
-
-
+            </div>
+            <div>
+                <button type="button" onClick={() => {
+                    console.log(firstName)
+                    console.log(lastName)
+                    console.log(zipCode)
+                }}>
+                    Submit
+                </button>
+            </div>
         </>
     )
 }
