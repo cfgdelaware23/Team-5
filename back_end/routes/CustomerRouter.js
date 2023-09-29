@@ -2,7 +2,7 @@ const express = require("express")
 
 const router = express.Router()
 
-router.get("/", (req, res) => {
+router.get("/save-customer", (req, res) => {
     res.json({mssg: "Welcome to app"})
 })
 
