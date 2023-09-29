@@ -23,9 +23,9 @@ router.get("/products_all", async (req, res) => {
 
 // Gets all customers
 router.get("/customers_all", async (req, res) => {
-    const customers = await user.find({}).sort({createdAt: -1})
+    const customers = await users.find({}).sort({createdAt: -1})
     
-    res.status(200).json(products)
+    res.status(200).json(customers)
 })
 
 module.exports = router
