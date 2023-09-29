@@ -4,11 +4,14 @@ import "../App.css";
 
 const SideBar = () => {
     return (
-        <aside className="flex flex-col p-5">
+        <aside className="flex flex-col justify-center align-middle p-5 h-full">
             <div id="wellfare-logo">
                {/* <Logo />  */}
+               Logo
+               <br></br>
+               *User's Name*
             </div>
-            <nav className="flex flex-col bg-blue-400">
+            <nav className="flex flex-col bg-red-500">
                 <a>Home</a>
                 <a>Sales</a>
                 <a>Feedback</a>
