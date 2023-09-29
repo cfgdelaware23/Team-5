@@ -28,6 +28,7 @@ function SignupPage() {
                         rows={1}
                         cols={40}
                         value={firstName}
+                        required = {true}
                         onChange={e => setFirstName(e.target.value)} />
                 </label>
                 <label>
@@ -39,6 +40,7 @@ function SignupPage() {
                         rows={1}
                         cols={40}
                         value={lastName}
+                        required = {true}
                         onChange={e => setLastName(e.target.value)} />
                 </label>
                 <label>
