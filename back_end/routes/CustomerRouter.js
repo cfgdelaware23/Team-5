@@ -31,6 +31,19 @@ router.get("/retrieve_customer/:id", async (request, res) => {
     return;
 })
 
+router.get("/retrieve_feedback/:id", async (request, res) => {
+    let passedInId = request.params.id;
+    try {
+        let feedback = await Feedback.findById(passedInId);
+        console.log(feedback);
+        res.status(200).json(feedback);
+    }
+    catch (err) {
+        res.status(404).json({error: "feedback not found"})
+    }
+    return;
+});
+
 router.post("/feedback_create", async (request, res) => {
     let id = request.body.customerId
     let feedback = request.body.feedbackPositive
