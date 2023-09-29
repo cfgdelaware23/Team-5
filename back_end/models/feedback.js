@@ -1,8 +1,17 @@
 let mongoose = require("mongoose");
 
 let feedbackSchema = new mongoose.Schema({
-    customerId: String,
-    feedbackPositive: Boolean,
-    feedbackDescription: String,
+    customerId: {
+        type: String,
+        required: false
+    },
+    feedbackPositive: {
+        type: Boolean,
+        required: false
+    },
+    feedbackDescription: {
+        type: String,
+        required: false
+    }
 }, 
 {timestamps: true})
