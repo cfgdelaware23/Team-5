@@ -11,9 +11,9 @@ const CustomerRouter = require("./routes/CustomerRouter.js")
 // set up express app
 const app = express()
 
+// middleware
 app.use(express.json())
 
-// middleware
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
@@ -26,19 +26,19 @@ app.get("/", (req, res) => {
 // routes
 app.use("/admin", AdminRouter)
 app.use("/customer", CustomerRouter)
-app.use("/products", ProductRouter)
+// app.use("/products", ProductRouter)
 
-// listening for requests
-// mongoose.connect(process.env.MONGO_URI)
-//     .then(() => {
-//         app.listen(4000, () => {
-//             console.log("Listening in port 4000")
-//         })
-//     })
-//     .catch((err) => {
-//         console.log("error")
-//     })
+// connect to db
+mongoose.connect(process.env.MONGODB)
+    .then(() => {
+        app.listen(process.env.PORT, () => {
+            console.log("Listening in port 4000 and connexted to db")
+        })
+    })
+    .catch((err) => {
+        console.log("error" + err)
+    })
 
-app.listen(process.env.PORT, () => {
-    console.log("Listening in port 4000")
-})
+// app.listen(process.env.PORT, () => {
+//     console.log("Listening in port 4000")
+// })
