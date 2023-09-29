@@ -1,9 +1,21 @@
 let mongoose = require("mongoose");
 
 let productSchem = new mongoose.Schema({
-    name: String,
-    quantitySold: Number,
-    priceFull: Number,
-    priceDiscount: Number,
+    name: {
+        type: String,
+        required: true,
+    },
+    quantitySold: {
+        type: Number,
+        required: true,
+    },
+    priceFull: {
+        type: Number,
+        required: true,
+    },
+    priceDiscount: {
+        type: Number,
+        required: true
+    }
 },
  {timestamps: true})
