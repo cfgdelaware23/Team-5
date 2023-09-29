@@ -9,14 +9,14 @@ const router = express.Router()
 router.get("/feedback", async (req, res) => {
     const feedback = await feedback.find({}).sort({createdAt: -1})
 
-    res.status(200).json(workouts)
+    res.status(200).json(feedback)
 
 })
 // Gets all products 
 router.get("/products_all", async (req, res) => {
     const products = await products.find({}).sort({quantitySold: -1})
     
-    res.status(200).json(workouts)
+    res.status(200).json(products)
 })
 
 module.exports = router
