@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 // routers
 const AdminRouter = require("./routes/AdminRouter.js")
 const CustomerRouter = require("./routes/CustomerRouter.js")
-// const ProductRouter = require("./routes/AdminRouter.js")
+    // const ProductRouter = require("./routes/AdminRouter.js")
 
 // set up express app
 const app = express()
@@ -18,13 +18,13 @@ app.use((req, res, next) => {
 })
 
 app.get("/", (req, res) => {
-    res.json({mssg:"welcome to our app"})
+    res.json({ mssg: "welcome to our app" })
 })
 
 // routes
 app.use("/admin", AdminRouter)
 app.use("/customer", CustomerRouter)
-// app.use("/products", ProductRouter)
+app.use("/products", ProductRouter)
 
 // listening for requests
 // mongoose.connect(process.env.MONGO_URI)
