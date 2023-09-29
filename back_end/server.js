@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const express = require("express")
 const mongoose = require("mongoose")
 
@@ -37,6 +39,6 @@ app.use("/products", ProductRouter)
 //         console.log("error")
 //     })
 
-app.listen(4000, () => {
+app.listen(process.env.PORT, () => {
     console.log("Listening in port 4000")
 })
