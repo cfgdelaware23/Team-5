@@ -2,7 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 
 // routers
-// const AdminRouter = require("./routes/AdminRouter.js")
+const AdminRouter = require("./routes/AdminRouter.js")
 const CustomerRouter = require("./routes/CustomerRouter.js")
 // const ProductRouter = require("./routes/AdminRouter.js")
 
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 })
 
 // routes
-// app.use("/admin", AdminRouter)
+app.use("/admin", AdminRouter)
 app.use("/customer", CustomerRouter)
 // app.use("/products", ProductRouter)
 

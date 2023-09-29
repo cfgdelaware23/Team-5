@@ -3,8 +3,14 @@ const express = require("express")
 const router = express.Router()
 
 // routes
-router.get("/", (req, res) => {
-    res.json({mssg: "Welcome to app"})
+
+// Gets all feedback in JSON array
+router.get("/feedback", (req, res) => {
+    res.json({mssg: "Feedback"})
+})
+// Gets all products 
+router.get("/products_all", (req, res) => {
+    res.json({mssg: "All products"})
 })
 
 module.exports = router
