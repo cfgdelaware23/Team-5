@@ -1,12 +1,13 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
-import SideBar from './components/SideBar'
+// import SideBar from './components/SideBar'
 
 function App() {
 
   return (
     <>
-      <SideBar />
+      <div className='bg-red-200 p-5'>test </div>
+      {/* <SideBar /> */}
     </>
   )
 }
