@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SignupPage from './pages/signupPage'
+import SignupPage from './pages/SignupPage'
 import './App.css'
 // import SideBar from './components/SideBar'
 
