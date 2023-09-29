@@ -9,19 +9,19 @@ router.post("/save_customer", (request, res) => {
     let address = request.body.address;
     let isAdmin = request.body.isAdmin;
 
-    const customer = Customer.create({name, qualify, address, isAdmin})
-    
+    const customer = Customer.create({ name, qualify, address, isAdmin })
+
     console.log(customer);
 
     res.json({ mssg: "customer created successfully" })
     return;
 })
 
-router.post("/retrieve_customer", (request, res) => {
+router.get("/retrieve_customer", (request, res) => {
     console.log(request.body);
 })
 
-router.post("/feedback_create", (request, res) => {
+router.get("/feedback_create", (request, res) => {
     console.log(request.body);
 })
 
