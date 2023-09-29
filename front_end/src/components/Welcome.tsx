@@ -4,7 +4,7 @@ const Welcome = () => {
     const [user] = useState("User");
     return (
         <>
-            <h1 className='font-black'>Welcome back, {user}</h1>
+            <h1 className='font-extrabold text-3xl'>Welcome back, <span className='italic'>{user}</span></h1>
         </>
     ) 
 };
