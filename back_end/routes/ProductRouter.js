@@ -24,12 +24,12 @@ router.get("/", async(req, res) => {
 // Gets product with id
 router.get("/get_product/:id", async(request, res) => {
     let passedInId = request.params.id;
+    if (!mongoose.Types.ObjectId.isValid(passedInId)) {
+        return res.status(404).json({error: 'no such product'})
+      }
+
     try {
         let product = await product.findById(passedInId);
-
-        if (!mongoose.Types.ObjectId.isValid(id)) {
-            return res.status(404).json({error: 'product not found'})
-          }
           
         console.log(product);
         res.status(200).json(product);

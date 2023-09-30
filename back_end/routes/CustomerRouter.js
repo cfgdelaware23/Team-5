@@ -1,9 +1,11 @@
 const express = require("express");
 const Customer = require("../models/user");
 const Feedback = require("../models/feedback");
+const mongoose = require("mongoose")
 
 const router = express.Router()
 
+// Adds customer
 router.post("/save_customer", async (request, res) => {
     let name = request.body.name;
     let qualify = request.body.qualify;
@@ -12,6 +14,11 @@ router.post("/save_customer", async (request, res) => {
 
     try {
         const customer = await Customer.create({name, qualify, address, isAdmin})
+
+        if (!customer) {
+            return res.status(404).json({ mssg: "customer not created" })
+        }
+
         console.log(customer);
         res.status(200).json(customer);
     }
@@ -21,10 +28,18 @@ router.post("/save_customer", async (request, res) => {
     return;
 })
 
+// Gets customer w id
 router.get("/retrieve_customer/:id", async (request, res) => {
     let passedInId = request.params.id;
+    if (!mongoose.Types.ObjectId.isValid(passedInId)) {
+        return res.status(404).json({error: 'no such product'})
+      }
     try {
         let customer = await Customer.findById(passedInId);
+
+        if (!customer) {
+            return res.status(404).json({ mssg: "customer not found" })
+        }
         console.log(customer);
         res.status(200).json(customer);
     }
@@ -35,6 +50,7 @@ router.get("/retrieve_customer/:id", async (request, res) => {
     return;
 })
 
+// Updates customer w id
 router.put("/update_customer/:id", async (request, res) => {
     let passedInId = request.params.id;
 
@@ -70,6 +86,7 @@ router.put("/update_customer/:id", async (request, res) => {
     return;
 });
 
+// Retrieves feedback from id
 router.get("/retrieve_feedback/:id", async (request, res) => {
     let passedInId = request.params.id;
     try {
@@ -83,6 +100,7 @@ router.get("/retrieve_feedback/:id", async (request, res) => {
     return;
 });
 
+// Creates feedback
 router.post("/feedback_create", async (request, res) => {
     try {
         let feedbackPositive = request.body.feedbackPositive
@@ -114,6 +132,7 @@ router.post("/feedback_create", async (request, res) => {
     }
 })
 
+// Updates the feedback
 router.put("/feedback_update/:id", async (request, res) => {
     let passedInId = request.params.id;
     let feedbackPositive = request.body.feedbackPositive
