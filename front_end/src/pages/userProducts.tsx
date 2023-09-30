@@ -55,7 +55,13 @@ const UserProducts = () => {
         </div>
       </div>
       <button
-          style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
+          style={{
+            backgroundColor: 'rgb(144,238,144)', 
+            color: 'black', 
+            marginTop: '25px', 
+            marginLeft: "auto", 
+            marginRight: "auto", 
+            display: "block"}}
 
       >
         Get a Healthy Food!
