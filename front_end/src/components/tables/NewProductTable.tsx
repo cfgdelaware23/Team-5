@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 
 import "../../App.css"
@@ -6,7 +7,6 @@ import "../../App.css"
 
 const NewProductTable = () => {
    const [products, setProduct] = useState(null)
-
 
    useEffect(() => {
        const fetchProduct = async() => {
@@ -20,7 +20,6 @@ const NewProductTable = () => {
        }
        fetchProduct()
    }, [])
-
 
    return (
        <div className="grid grid-cols-2 w-4/5vw h-full mb-8 sm:mx-4 lg:mx-8 gap-4">
