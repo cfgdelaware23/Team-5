@@ -21,6 +21,13 @@ const AdminSales = () => {
         fetchProduct();
     }, []);
 
+    if(products != null){
+        products.sort((a,b) => -1*(a.quantitySold - b.quantitySold));
+
+    }
+    
+
+
     return (
         <div className="flex justify-center items-center h-full">
             <AdminSideBar />
@@ -47,12 +54,6 @@ const AdminSales = () => {
                 </tbody>
                 </table>
             </div>  
-
-            <button
-        style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
-        >
-                Get A Healthy Food!
-            </button>
 
         </div>
 
