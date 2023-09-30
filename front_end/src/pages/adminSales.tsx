@@ -21,6 +21,10 @@ const AdminSales = () => {
         fetchProduct();
     }, []);
 
+    const showHealthyFood() => {
+
+    }
+
     return (
         <div className="flex justify-center items-center h-full">
             <AdminSideBar />
@@ -47,19 +51,6 @@ const AdminSales = () => {
                 </tbody>
                 </table>
             </div>  
-
-            <button
-
-                style={{
-                    backgroundColor: 'rgb(144,238,144)', 
-                    color: 'black', 
-                    marginTop: '10px', 
-                    marginLeft: "auto", 
-                    marginRight: "30px", 
-                    display: "block"}}
-            >
-                Get A Healthy Food!
-            </button>
 
         </div>
 
