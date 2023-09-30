@@ -2,9 +2,9 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import React, { useState } from 'react'
 import SignupPage from './pages/signupPage'
-import LoginPage from './pages/loginPage'
+import LoginPage from './pages/LoginPage'
 import './App.css'
-import TransactionTable from './components/TransactionTable'
+import NewProductTable from './components/tables/NewProductTable';
 
 //import SideBar from './components/SideBar'
 import AdminCustomers from './pages/AdminCustomers'
@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<LoginPage />} />
-      <Route path="/transactions" element={<TransactionTable />} />
+      <Route path="/transactions" element={<NewProductTable />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/submitfeedback" element={<SubmitFeedback />} />
       <Route path="/admin/customers" element={<AdminCustomers />} />
