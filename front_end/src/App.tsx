@@ -14,6 +14,7 @@ import AdminIndex from './pages/AdminIndex'
 import AdminSales from './pages/AdminSales'
 import UserIndex from './pages/UserIndex'
 import UserProducts from './pages/UserProducts'
+import SubmitFeedback from './pages/submitFeedback'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Route path="/" element={<LoginPage />} />
       <Route path="/transactions" element={<TransactionTable />} />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/submitfeedback" element={<SubmitFeedback />} />
       <Route path="/admin/ustomers" element={<AdminCustomers />} />
       <Route path="/admin/feedback" element={<AdminFeedback />} />
       <Route path="/admin/index" element={<AdminIndex />} />
