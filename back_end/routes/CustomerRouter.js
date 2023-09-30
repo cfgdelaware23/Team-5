@@ -35,6 +35,41 @@ router.get("/retrieve_customer/:id", async (request, res) => {
     return;
 })
 
+router.put("/update_customer/:id", async (request, res) => {
+    let passedInId = request.params.id;
+
+    let name = request.body.name;
+    let qualify = request.body.qualify;
+    let address = request.body.address;
+    let isAdmin = request.body.isAdmin;
+
+
+    try {
+        const customer = await Customer.findById(passedInId);
+        if (name === undefined) {
+            name = customer.name
+        }
+        if (qualify === undefined) {
+            qualify = customer.qualify
+        }
+        if (address === undefined) {
+            address = customer.address
+        }
+        if (isAdmin === undefined) {
+            isAdmin = customer.isAdmin
+        }
+        let newCustomer = await Customer.findByIdAndUpdate(passedInId, {name, qualify, address, isAdmin});
+
+        // Can be optimized (multiple SQL queries), but find for now
+        let updatedCustomer = await Customer.findById(passedInId);
+        res.status(200).json(updatedCustomer);
+    }
+    catch(err) {
+        res.status(400, {error: "customer not updated"});
+    }
+    return;
+});
+
 router.get("/retrieve_feedback/:id", async (request, res) => {
     let passedInId = request.params.id;
     try {
@@ -67,7 +102,6 @@ router.post("/feedback_create", async (request, res) => {
     catch (err) {
         res.status(400).json({error: "customer not created"});
     }
-    console.log(request.body);
 })
 
 module.exports = router
