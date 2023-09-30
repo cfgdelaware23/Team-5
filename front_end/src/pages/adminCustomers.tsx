@@ -12,7 +12,7 @@ function adminCustomers() {
             <SideBar />
             <div className='flex flex-col'>
                 <h1>Customer Summary</h1>
-                <CustomerCount />
+                
                 <NewCustomerTable />
             </div>
         </div>
