@@ -12,7 +12,7 @@ const upload = multer({ storage: storage })
 
 // Gets all products
 router.get("/", async(req, res) => {
-    const allProducts = await product.find({}).sort({ quantitySold: -1 })
+    const allProducts = await product.find({}).sort({ name: 1 })
 
     if (!allProducts) {
         res.status(404).json({mssg: "products not found"})
