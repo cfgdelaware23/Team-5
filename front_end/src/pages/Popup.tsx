@@ -25,10 +25,18 @@ function Popup({text, closePopup}) {
   return (
     <div className="popup-container">
      <div className="popup-body">
-      <h1>hey there</h1>
+     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
+        {product &&
+          product.map((p) => (
+            <div key={p._id} className="bg-white p-6 rounded-lg shadow-lg">
+              <h2 className="text-xl font-bold mb-2">{p.name}</h2>
+                Regular Price: ${p.priceFull}
+            </div>
+          ))}
+      </div>
       <button onClick={closePopup}>Close X</button>
      </div>
-    </div>
+     </div>
   );
 }
 
