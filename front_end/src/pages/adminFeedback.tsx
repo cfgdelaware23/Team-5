@@ -40,7 +40,7 @@ const AdminFeedback = () => {
                                 <tr key={p._id} className="hover:bg-gray-100">
                                     <td className="py-2 px-6 border-b text-center">{p.productId || ' - '}</td>
                                     <td className="py-2 px-6 border-b text-center">{p.feedbackDescription || ' - '}</td>
-                                    <td className="py-2 px-6 border-b text-center">{p.feedbackPositive ? 'Yes' : ' - '}</td>
+                                    <td className="py-2 px-6 border-b text-center">{p.feedbackPositive ? 'Yes' : 'No'}</td>
                                     <td className="py-2 px-6 border-b text-center">{p.createdAt}</td>
                                 </tr>
                             ))}
