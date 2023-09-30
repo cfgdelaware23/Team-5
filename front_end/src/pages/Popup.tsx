@@ -8,8 +8,8 @@ function Popup() {
   };
 
   return (
-    <div className={`popup ${isOpen ? 'open' : ''}`}>
-      <div className="popup-content">
+    <div className={`popup ${isOpen ? 'open w-screen h-screen z-10' : ''}`}>
+      <div className="popup-content w-1/2 h-1/2">
         <button onClick={togglePopup}>Close</button>
       </div>
     </div>
