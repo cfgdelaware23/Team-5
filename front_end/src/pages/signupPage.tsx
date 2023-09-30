@@ -34,14 +34,15 @@ function SignupPage() {
     }
 
     return (
-        <div id="signup-div">
-            <div>
-            <h1 style={{ color: 'black', fontWeight: 'bold' }}>
+
+        <div >
+            <h1 style={{ color: 'red', fontWeight: 'bold' }}>
                 User Signup
             </h1>
+            <div>
                 <button 
                 onClick={goToTransactionPage}
-                style={{ color: 'black', marginTop: '10px' }}
+                style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px' }}
                 >Go to transactions</button>
                     <div>
                         First Name:
@@ -67,7 +68,11 @@ function SignupPage() {
                         name="inputZipCode"
                         value={zipCode}
                         onChange={e => setZipCode(e.target.value)} />
+            </div>
+            <div>
                 <p> Please select all that apply:</p>
+            </div>
+            <div>
                 <label>
                         EBT:
                     <input
@@ -76,19 +81,36 @@ function SignupPage() {
                         checked={EBT_SNAP}
                         onChange={e => setEBT_SNAP(e.target.checked)} />
                 </label>
-                <br></br>
+                <label>
+                        SNAP:
+                    <input
+                        name="inputEBT"
+                        type="checkbox"
+                        checked={EBT_SNAP}
+                        onChange={e => setEBT_SNAP(e.target.checked)} />
+                </label>
+                <label>
+                        WIC:
+                    <input
+                        name="inputEBT"
+                        type="checkbox"
+                        checked={EBT_SNAP}
+                        onChange={e => setEBT_SNAP(e.target.checked)} />
+                </label>
+            </div>
+            <div>
                 <button type="button" onClick={() => {
                     setFirstName('');
                     setLastName('');
                     setZipCode('');
                     setEBT_SNAP(false);
-                }} style={{ marginTop: '10px',marginRight: '20px', backgroundColor: "#A8EB12"}}>
+                }} style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px',marginRight: '20px'}}>
                     Clear
                 </button>
-                <button type="button" onClick={handleSubmit} style={{ backgroundColor: "#A8EB12", marginTop: '10px',marginRight: '20px'}}>
+                <button type="button" onClick={handleSubmit} style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px',marginRight: '20px'}}>
                     Submit
                 </button>
-                </div>
+            </div>
         </div>
     )
 }
