@@ -16,10 +16,11 @@ function CustomerTable() {
         }
         fetchCustomers()
     }, [])
+    const length = customers.length
 
     return (
         <div>
-            <h1>Total customers: {customers.length}</h1>
+            <p>{length}</p>
         </div>
 
     )
