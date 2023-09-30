@@ -70,6 +70,11 @@ router.post("/create_product/:name/:quantity/:full/:discount", async(request, re
 // updates product
 router.put("/update_product/:id/:quantitySold", async(request, res) => {
     let id = request.body.id;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'no such product'})
+    }
+
     let quantity = request.body.quantitySold;
 
     const product = await product.findById(id);
