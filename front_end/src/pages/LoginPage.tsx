@@ -1,22 +1,17 @@
 import { useState } from 'react'
-import '../App.css'
+import '../app.css'
+
+import { useNavigate } from 'react-router-dom';
 
 
-
-
-function LoginPage({}) {
+function LoginPage() {
     const [memberId, setMemberId] = useState('')
-    const onRegisterPress = () =>{
-        setMemberId('')
+
+    const navigate = useNavigate();
+
+    function goToSignUpPage() {
+        navigate("/signup")
     }
-
-    const onLoginPress = () =>{
-        if(memberId.length > 0){
-    }
-
-}
-
-
 
     return (
 
@@ -34,6 +29,11 @@ function LoginPage({}) {
                     value={memberId}
                     required={true}
                     onChange={e => setMemberId(e.target.value)} />
+                    <button 
+                        onClick={goToSignUpPage}
+                        >
+                            Sign Up Here!
+                        </button>
             </div>
             <div>
                 <button type="button" onClick={() => {
