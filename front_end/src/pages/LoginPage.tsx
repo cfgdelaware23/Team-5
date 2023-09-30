@@ -10,46 +10,45 @@ function LoginPage() {
   const navigate = useNavigate();
   const [loaded, setLoaded] = useState(false);
   const [zipCode, setZipCode] = useState('')
-    const [name, setName] = useState('')
-    const [dateCreated, setDateCreated] = useState('')
-    const [qualify, setQualify] = useState(false);
-    const [isAdmin, setIsAdmin] = useState(false);
+  const [name, setName] = useState('')
+  const [dateCreated, setDateCreated] = useState('')
+  const [qualify, setQualify] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const goToSignUpPage = () => {
     navigate('/signup');
   };
 
-    if (!loaded) {
-      return (
-    <div id="login-page-div">
-      <div>
-      <h1 style={{ color: 'black', fontStyle: "bold", fontSize: '24px', textAlign: "center", marginBottom: "10px"}}>Login</h1>
-        <div>Member ID:</div>
-        <input className="border-2 border-black-500"
-                        name="inputFirstName"
-                        value={memberId}
-                        required = {true}
-                        onChange={e => setMemberId(e.target.value)} />
-                    <div >
-        <button
-          onClick={handleSubmit}
-          style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
-        >
-          Login Here
-        </button>
-        </div>
+  if (!loaded) {
+    return (
+      <div className='flex justify-center align-middle w-screen h-screen' id="login-page-div">
+        <div>
+        <h1 className='font-extrabold text-4xl m-4 uppercase'>Login</h1>
+          <div>Member ID:</div>
+          <input className="border-2 border-black-500"
+                          name="inputFirstName"
+                          value={memberId}
+                          required = {true}
+                          onChange={e => setMemberId(e.target.value)} />
+                      <div >
           <button
-            onClick={goToSignUpPage}
-          style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
+            onClick={handleSubmit}
+            style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
           >
-            Sign Up Here!
+            Login Here
           </button>
+          </div>
+            <button
+              onClick={goToSignUpPage}
+            style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
+            >
+              Sign Up Here!
+            </button>
+          </div>
       </div>
-    </div>
   )}
   else if (loaded && !isAdmin) {
     return (
-      <>
       <div id="login-page-div">
         <div style={{
         }}>
@@ -61,32 +60,31 @@ function LoginPage() {
           <p>Qualifies: {qualify.toString()}</p>
           <p>Date Signed Up: {dateCreated.toString()}</p>
         </div>
-        </div>
-        </>
+      </div>
     )
   }
   else {
     return (
       <>
-    <div className='flex h-full w-full'>
-      <AdminSideBar />
-      <div className='flex flex-col'>
-      <div id="login-page-div">
-        <div style={{
-          marginLeft: "50px",
-        }}>
-          <br></br>
-          <h1>Information</h1>
-          <p>Name: {name}</p>
-          <p>Zipcode: {zipCode}</p>
-          <p>Qualifies: {qualify.toString()}</p>
-          <p>Date Signed Up: {dateCreated.toString()}</p>
+        <div className='flex h-full w-full justify-center align-middle'>
+          <AdminSideBar />
+          <div className='flex flex-col'>
+          <div id="login-page-div">
+            <div style={{
+              marginLeft: "50px",
+            }}>
+              <br></br>
+              <h1>Information</h1>
+              <p>Name: {name}</p>
+              <p>Zipcode: {zipCode}</p>
+              <p>Qualifies: {qualify.toString()}</p>
+              <p>Date Signed Up: {dateCreated.toString()}</p>
+            </div>
+            </div>
+          </div>
         </div>
-        </div>
-      </div>
-    </div>
 
-        </>
+      </>
     )
   }
     function handleSubmit() {
