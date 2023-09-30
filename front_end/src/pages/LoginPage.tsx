@@ -128,11 +128,7 @@ function LoginPage() {
           <UserSideBar />
           <br></br>
           <div className="p-3">
-            <h1>Information</h1>
-            <p>Name: {name}</p>
-            <p>Zipcode: {zipCode}</p>
-            <p>Qualifies: {qualify.toString()}</p>
-            <p>Date Signed Up: {dateCreated.toString().substring(0, 10)}</p>
+          <h1 style={{ textAlign: 'center' }}>Welcome, {name}!</h1>
           </div>
         </div>
       </div>
