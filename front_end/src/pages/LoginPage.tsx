@@ -38,7 +38,7 @@ function LoginPage() {
                         <div>
         <button
           onClick={handleLogin}
-          style={{ backgroundColor: '#A8EB12', color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
+          style={{backgroundColor: '#A8EB12', color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
         >
           <h1>Login Here</h1>
         </button>

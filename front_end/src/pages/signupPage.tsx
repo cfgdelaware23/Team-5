@@ -81,6 +81,22 @@ function SignupPage() {
                         checked={EBT_SNAP}
                         onChange={e => setEBT_SNAP(e.target.checked)} />
                 </label>
+                <label>
+                        SNAP:
+                    <input
+                        name="inputEBT"
+                        type="checkbox"
+                        checked={EBT_SNAP}
+                        onChange={e => setEBT_SNAP(e.target.checked)} />
+                </label>
+                <label>
+                        WIC:
+                    <input
+                        name="inputEBT"
+                        type="checkbox"
+                        checked={EBT_SNAP}
+                        onChange={e => setEBT_SNAP(e.target.checked)} />
+                </label>
             </div>
             <div>
                 <button type="button" onClick={() => {
