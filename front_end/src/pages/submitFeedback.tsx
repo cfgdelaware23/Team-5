@@ -1,28 +1,28 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function SubmitFeedback(){
     const [memberId, setMemberId] = useState('');
     const [isPositive, setIsPositive] = useState(false);
     const [feedback, setFeedback] = useState('');
     const [productId, setProductId] = useState('');
+    const navigate = useNavigate();
 
     function handleSubmit () {
-        // console.log(memberId, isPositive, feedback);
         axios.post("http://localhost:4000/customer/feedback_create", {
             feedbackPositive: isPositive,
             feedbackDescription: feedback,
             customerId: memberId,
             productId: productId,
         }).then(function (response) {
-            // Success: reload page
-            // window.location.reload();
             console.log(response);
 
         }).catch(function (error) {
             console.log(error);
         })
 
+        navigate("/customer/products");
     }
 
 return(
@@ -54,9 +54,9 @@ return(
           onChange={(e) => setFeedback(e.target.value)}
           style={{}}
         />
-        <p>Positive Feedback?: </p>
         <label>
-            Feedback positive?
+            <p></p>
+        Positive Feedback?:  
             <input
                 name="inputEBT"
                 type="checkbox"
