@@ -30,7 +30,7 @@ const AdminSideBar = () => {
                         <a href='/admin/feedback' className="hover:text-slate-200 hover:cursor-pointer" id='feedback'>Feedback</a>
                     </ul>
                     <ul>
-                        <a to='/admin/customers' className="hover:text-slate-200 hover:cursor-pointer" id='customers'>Customers </a>
+                        <a href='/admin/customers' className="hover:text-slate-200 hover:cursor-pointer" id='customers'>Customers </a>
                     </ul>
                 </li>
             </nav>
