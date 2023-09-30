@@ -16,6 +16,11 @@ let productSchema = new mongoose.Schema({
     priceDiscount: {
         type: Number,
         required: true
+    }, 
+    image: {
+        data: Buffer,
+        contentType: String,
+        required: false
     }
 }, { timestamps: true })
 
