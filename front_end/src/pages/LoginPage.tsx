@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import '../app.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import SideBar from '../components/AdminSideBar';
 import UserSideBar from '../components/UserSideBar';
+import AdminSideBar from '../components/AdminSideBar';
 
 function LoginPage() {
   const [memberId, setMemberId] = useState('');
@@ -13,6 +13,7 @@ function LoginPage() {
     const [name, setName] = useState('')
     const [dateCreated, setDateCreated] = useState('')
     const [qualify, setQualify] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
 
   const goToSignUpPage = () => {
     navigate('/signup');
@@ -46,13 +47,31 @@ function LoginPage() {
       </div>
     </div>
   )}
-  else {
+  else if (loaded && !isAdmin) {
     return (
       <>
       <div id="login-page-div">
         <div style={{
         }}>
           <UserSideBar/>
+          <br></br>
+          <h1>Information</h1>
+          <p>Name: {name}</p>
+          <p>Zipcode: {zipCode}</p>
+          <p>Qualifies: {qualify.toString()}</p>
+          <p>Date Signed Up: {dateCreated.toString()}</p>
+        </div>
+        </div>
+        </>
+    )
+  }
+  else {
+    return (
+      <>
+      <div id="login-page-div">
+        <div style={{
+        }}>
+          <AdminSideBar/>
           <br></br>
           <h1>Information</h1>
           <p>Name: {name}</p>
@@ -73,6 +92,7 @@ function LoginPage() {
             setName(response.data.name);
             setQualify(response.data.qualify);
             setDateCreated(response.data.createdAt);
+            setIsAdmin(response.data.isAdmin);
             setLoaded(true);
 
         }).catch(function (error) {
