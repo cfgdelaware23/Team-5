@@ -8,6 +8,7 @@ import './App.css'
 import AdminSideBar from './components/AdminSideBar'
 import AdminCustomers from './pages/AdminCustomers'
 import AdminIndex from './pages/AdminIndex'
+import AdminFeedback from './pages/adminFeedback'
 import AdminSales from './pages/adminSales'
 import UserIndex from './pages/UserIndex'
 import UserProducts from './pages/userProducts'
@@ -22,7 +23,7 @@ function App() {
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/submitfeedback" element={<SubmitFeedback />} />
       <Route path="/admin/customers" element={<AdminCustomers />} />
-      {/* <Route path="/admin/feedback" element={<AdminFeedback />} /> */}
+      {<Route path="/admin/feedback" element={<AdminFeedback />} />}
       <Route path="/admin/index" element={<AdminIndex />} />
       <Route path="/admin/sales" element={<AdminSales />} />
       <Route path="customer/index" element={<UserIndex />} />
