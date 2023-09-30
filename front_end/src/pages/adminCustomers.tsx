@@ -7,9 +7,13 @@ function adminCustomers() {
 
 
     return (
-
         <div >
-<CustomerTable/>
+        
+            <div>
+            <h1>Customer Summary</h1>
+            <p></p>
+            </div>  
+        <CustomerTable/>
             </div>
     )
 }
