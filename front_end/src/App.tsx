@@ -28,7 +28,7 @@ function App() {
       <Route path="/admin/index" element={<AdminIndex />} />
       <Route path="/admin/sales" element={<AdminSales />} />
       <Route path="customer/products" element={<UserProducts />} />
-      <Route path="customer/update" element={<UserUpdate/>} />
+      <Route path="edit/customer/:id" element={<UserUpdate/>} />
     </Routes>
     </BrowserRouter>
   )
