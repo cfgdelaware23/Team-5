@@ -38,14 +38,14 @@ function LoginPage() {
                         <div>
         <button
           onClick={handleLogin}
-          style={{ backgroundColor: '#A8EB12', color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
+          style={{ color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
         >
-          <h1>Login Here</h1>
+          Login Here
         </button>
         </div>
           <button
             onClick={goToSignUpPage}
-          style={{ backgroundColor: '#A8EB12', color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
+          style={{ color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
           >
             Sign Up Here!
           </button>
