@@ -17,7 +17,6 @@ let feedbackSchema = new mongoose.Schema({
         type: String,
         required: false
     }
-}, 
-{timestamps: true})
+}, { timestamps: true })
 
 module.exports = mongoose.model("Feedback", feedbackSchema)
