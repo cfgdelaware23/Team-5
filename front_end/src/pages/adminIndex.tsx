@@ -5,13 +5,23 @@ import Welcome from '../components/Welcome'
 import DashboardCard from '../components/DashboardCard'
 
 function AdminIndex() {
+  // TODO: display data for quick links
+  // const resources = [
+  //   {text: 'Website', url:'https://www.wellfare.org/'},
+  //   {text: '', url:''},
+  //   {text: '', url:''},
+  // ];
+
   return (
     <div className='flex h-full w-full'>
       <AdminSideBar />
       <div className='flex flex-col'>
         <Welcome />
         {/* <DashboardGrid /> */}
-        <DashboardCard header='Resources' data='' />
+        <DashboardCard 
+          header='Quick Links' 
+          data=''
+          />
       </div>
     </div>
   )
