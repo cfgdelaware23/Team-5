@@ -14,7 +14,7 @@ function SignupPage() {
 
     function goToTransactionPage() {
         console.log("Test");
-        navigate("/transactions");
+        navigate("/customer/products");
     }
 
     function handleSubmit() {
@@ -31,6 +31,7 @@ function SignupPage() {
         }).catch(function (error) {
             console.log(error);
         })
+        navigate("/customer/products");
     }
 
     return (
