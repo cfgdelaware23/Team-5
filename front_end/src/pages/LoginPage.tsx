@@ -21,29 +21,86 @@ function LoginPage() {
 
   if (!loaded) {
     return (
-      <div className='flex justify-center align-middle w-screen h-screen' id="login-page-div">
-        <div>
-        <h1 className='font-extrabold text-4xl m-4 uppercase'>Login</h1>
-          <div>Member ID:</div>
-          <input className="border-2 border-black-500"
-                          name="inputFirstName"
-                          value={memberId}
-                          required = {true}
-                          onChange={e => setMemberId(e.target.value)} />
-                      <div >
-          <button
-            onClick={handleSubmit}
-            style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
-          >
-            Login Here
+        // <div className='flex flex-col w-screen h-screen justify-center items-top text-center'>
+        //     <h1 className='font-extrabold text-4xl m-4 uppercase'>Sign Up</h1>
+        //     <form id='user-form' className='flex flex-col align-middle items-center font-bold text-left w-full p-4'>
+        //         <label>First Name:</label>
+        //             <input className="border-2 border-black-500"
+        //              />
+
+        //         <label>Last Name:</label>
+        //         <input className="border-2 border-black-500"
+        //             name="inputSecondName"
+        //             value={lastName}
+        //             required={true}
+        //             onChange={e => setLastName(e.target.value)} 
+        //             placeholder='Last name' />
+
+        //         <label>Zip Code:</label>
+        //         <input className="border-2 border-black-500"
+        //             name="inputZipCode"
+        //             value={zipCode}
+        //             onChange={e => setZipCode(e.target.value)}
+        //             placeholder='Zip code' />
+        //     </form>
+        //     <div className='mt-4 mb-2 mx-2'>
+        //         <em className='italic font-semibold'>Please select all that apply:</em>
+        //         <div className='flex justify-center'>
+        //             <div className='mx-2'>
+        //                 <label className="font-medium">EBT: {' '}</label>
+        //                     <input
+        //                         name="inputEBT"
+        //                         type="checkbox"
+        //                         checked={EBT_SNAP}
+        //                         onChange={e => setEBT_SNAP(e.target.checked)} />
+        //             </div>
+        //             <div className='mx-2'>
+        //                 <label className="font-medium">WIC: {' '}</label>
+        //                     <input
+        //                         name="inputEBT"
+        //                         type="checkbox"
+        //                         checked={WIC}
+        //                         onChange={e => setWIC(e.target.checked)} />
+        //             </div>
+        //         </div>
+        //     </div>
+        //     <div className="justify-center">
+        //         <button className='bg-slate-200 text-black mx-1 font-medium' type="button" onClick={() => {
+        //             setFirstName('');
+        //             setLastName('');
+        //             setZipCode('');
+        //             setEBT_SNAP(false);
+        //             setWIC(false);
+        //         }}>
+        //             Clear
+        //         </button>
+        //         <button className='bg-blue-700 text-white mx-1 font-medium' type="button" onClick={handleSubmit}>
+        //             Submit
+        //         </button>
+        //     </div>
+        //     <div className="py-3">
+        //         <a className='hover:cursor-pointer font-medium text-blue-700' onClick={goToLoginPage}>Already have an account?</a>
+        //     </div>
+        // </div>
+
+
+      
+      <div className='flex flex-col justify-center align-middle w-screen h-screen text-center' id="login-page-div">
+          <h1 className='font-extrabold text-4xl m-4 uppercase'>Log In</h1>
+          <form id='user-form' className='flex flex-col align-middle items-center font-bold text-left w-full p-4'>
+            <label>Member ID:</label>
+            <input className="border-2 border-black-500"
+                    name="inputFirstName"
+                    placeholder='123456'
+                    value={memberId}
+                    required = {true}
+                    onChange={e => setMemberId(e.target.value)} />
+          </form>
+          <button className='bg-slate-700 text-white mx-1 font-medium w-1/2' onClick={handleSubmit} >
+            Log In 
           </button>
-          </div>
-            <button
-              onClick={goToSignUpPage}
-            style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
-            >
-              Sign Up Here!
-            </button>
+          <div className="py-3">
+            <em><a className='hover:cursor-pointer font-medium text-slate-700' onClick={goToSignUpPage}>Don't have an account? Sign up here!</a></em>
           </div>
       </div>
   )}
