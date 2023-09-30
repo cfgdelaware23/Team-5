@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>  
-<SignupPage></SignupPage>  
+<TransactionTable></TransactionTable>
   </>
   )
 }

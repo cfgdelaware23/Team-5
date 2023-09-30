@@ -22,29 +22,25 @@ function TransactionTable() {
 
     return (
         <div>
-            <table className="table-auto">
-                <thead>
+            <table className="shadow-lg bg-white">
                     <tr>
-                        <th>Name</th>
-                        <th>Brand</th>
-                        <th>Image</th>
-                        <th>Price</th>
-                        <th>Rating</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Name</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Brand</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Image</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Price</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Rating</th>
                     </tr>
-                </thead>
-                <tbody>
                     {data.map((item, index) => (
                         <tr key={index}>
-                            <td>{item.title}</td>
-                            <td>{item.brand}</td>
-                            <td>
+                            <td className="border-black">{item.title}</td>
+                            <td className="border-black">{item.brand}</td>
+                            <td className="border-black">
                                 <img src={item.thumbnail} alt="" height={100} />
-                            </td>
-                            <td>{item.price}</td>
-                            <td>{item.rating}</td>
+                            </td >
+                            <td className="border-black">{item.price}</td>
+                            <td className="border-black">{item.rating}</td>
                         </tr>
                     ))}
-                </tbody>
             </table>
         </div>
     )
