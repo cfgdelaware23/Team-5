@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import '../app.css'
-
+import '../App.css'
+import { useNavigate } from 'react-router-dom';
 
 
 function SignupPage() {
@@ -10,6 +10,13 @@ function SignupPage() {
     const [EBT, setEBT] = useState(false)
     const [SNAP, setSNAP] = useState(false)
 
+    const navigate = useNavigate();
+
+    function goToTransactionPage() {
+        console.log("Test");
+        navigate("/transactions");
+    }
+
 
     return (
 
@@ -18,11 +25,12 @@ function SignupPage() {
                 User Signup
             </h1>
             <div>
+                <button onClick={goToTransactionPage}>Go to transactions</button>
                     <div>
                         First Name:
                     </div>
 
-                    <input
+                    <input className="border-2 border-black-500"
                         name="inputFirstName"
                         value={firstName}
                         required = {true}
@@ -30,7 +38,7 @@ function SignupPage() {
                     <div >
                         Last Name:
                     </div>
-                    <input
+                    <input className="border-2 border-black-500"
                         name="inputSecondName"
                         value={lastName}
                         required = {true}
@@ -38,7 +46,7 @@ function SignupPage() {
                     <div>
                         Zip Code:
                     </div>
-                    <input
+                    <input className="border-2 border-black-500"
                         name="inputZipCode"
                         value={zipCode}
                         onChange={e => setZipCode(e.target.value)} />
