@@ -1,18 +1,19 @@
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
-import SignupPage from './pages/signupPage'
+import SignupPage from './pages/SignupPage'
 import LoginPage from './pages/LoginPage'
 import './App.css'
 import TransactionTable from './components/TransactionTable'
 // import SideBar from './components/SideBar'
 
 import SideBar from './components/SideBar'
-import AdminCustomers from './pages/adminCustomers'
-import AdminFeedback from './pages/adminFeedback'
-import AdminIndex from './pages/adminIndex'
-import AdminSales from './pages/adminSales'
-import UserIndex from './pages/userIndex'
+import AdminCustomers from './pages/AdminCustomers'
+import AdminFeedback from './pages/AdminFeedback'
+import AdminIndex from './pages/AdminIndex'
+import AdminSales from './pages/AdminSales'
+import UserIndex from './pages/UserIndex'
+import UserProducts from './pages/UserProducts'
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
       <Route path="/admin/index" element={<AdminIndex />} />
       <Route path="/admin/sales" element={<AdminSales />} />
       <Route path="customer/index" element={<UserIndex />} />
-      <Route path="customer/"
+      <Route path="customer/products" element={<UserProducts />} />
     </Routes>
     </BrowserRouter>
   )

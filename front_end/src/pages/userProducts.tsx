@@ -1,7 +1,7 @@
-function userProducts(){
+function UserProducts(){
     return(
         <></>
     )
     }
     
-    export default userProducts
+    export default UserProducts
