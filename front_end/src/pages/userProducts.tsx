@@ -27,50 +27,44 @@ const UserProducts = () => {
 
   return (
     <>
-    <UserSideBar/>
-    <div className="flex justify-center items-center h-full">
-      <div className="w-4/5vw mb-8 sm:mx-4 lg:mx-8">
-        <div className="flex justify-end mb-4">
-          <label className="mr-4">
-            Show Discounted Price
-            <input
-              type="checkbox"
-              checked={showDiscounted}
-              onChange={() => setShowDiscounted(!showDiscounted)}
-              className="ml-2"
-            />
-          </label>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {products &&
-            products.map((p) => (
-              <div key={p._id} className="bg-white p-6 rounded-lg shadow-lg">
-                <h2 className="text-xl font-bold mb-2">{p.name}</h2>
-                <p className={`text-lg mb-2 ${showDiscounted ? 'line-through' : ''}`}>
-                  Regular Price: ${p.priceFull}
-                </p>
-                {showDiscounted && (
-                  <p className="text-lg mb-2">Discounted Price: ${p.priceDiscount}</p>
-                )}
-              </div>
-            ))}
+      <UserSideBar/>
+      <div className='flex justify-center align-center m-5'>
+        <button
+            // onClick={() => document.getElementById("popup").classList.toggle("open")}
+            className='bg-green-600 w-1/6 text-center'
+        >
+          Get a Healthy Food!
+        </button>
+        {/* <Popup /> */}
+        <div className="flex justify-center items-center h-full">
+          <div className="w-4/5vw sm:mx-4 lg:mx-8">
+            <div className="flex justify-center mb-4 bg-slate-700/25 lg:w-1/4 rounded">
+              <label className="mx-4 font-bold">Show Discounted Price</label>
+                <input 
+                  type="checkbox"
+                  checked={showDiscounted}
+                  onChange={() => setShowDiscounted(!showDiscounted)}
+                  className="mx-2"
+                  />
+            </div>
+          </div>
         </div>
       </div>
-      <button
-          // onClick={() => document.getElementById("popup").classList.toggle("open")}
-          style={{
-            backgroundColor: 'rgb(144,238,144)', 
-            color: 'black', 
-            marginTop: '25px', 
-            marginLeft: "auto", 
-            marginRight: "auto", 
-            display: "block"}}
-      >
-        Get a Healthy Food!
-      </button>
-      {/* <Popup /> */}
-    </div>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
+        {products &&
+          products.map((p) => (
+            <div key={p._id} className="bg-white p-6 rounded-lg shadow-lg">
+              <h2 className="text-xl font-bold mb-2">{p.name}</h2>
+              <p className={`text-lg mb-2 ${showDiscounted ? 'line-through' : ''}`}>
+                Regular Price: ${p.priceFull}
+              </p>
+              {showDiscounted && (
+                <p className="text-lg mb-2">Discounted Price: ${p.priceDiscount}</p>
+              )}
+            </div>
+          ))}
+      </div>
     </>
   );
 };
