@@ -66,7 +66,7 @@ function SignupPage() {
                     onChange={e => setZipCode(e.target.value)}
                     placeholder='Zip code' />
             </form>
-            <div className='mt-4 mb-2 mx-2'>
+            <div className='mt-3 mb-2 mx-2'>
                 <em className='italic font-semibold'>Please select all that apply:</em>
                 <div className='flex justify-center'>
                     <div className='mx-2'>
