@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import "../App.css"
-
+// transaction table
 const TransactionTable = () => {
     const [customers, setCustomers] = useState(null)
 
