@@ -68,10 +68,13 @@ function LoginPage() {
   else {
     return (
       <>
+    <div className='flex h-full w-full'>
+      <AdminSideBar />
+      <div className='flex flex-col'>
       <div id="login-page-div">
         <div style={{
+          marginLeft: "50px",
         }}>
-          <AdminSideBar/>
           <br></br>
           <h1>Information</h1>
           <p>Name: {name}</p>
@@ -80,6 +83,9 @@ function LoginPage() {
           <p>Date Signed Up: {dateCreated.toString()}</p>
         </div>
         </div>
+      </div>
+    </div>
+
         </>
     )
   }
