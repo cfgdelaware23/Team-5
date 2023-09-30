@@ -58,4 +58,24 @@ router.put("/update_product/:id/:quantitySold", async(request, res) => {
     return;
 })
 
+// Delete product w id
+router.delete("/delete_product/:id", async(request, res) => {
+
+    const {id} = request.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json({error: 'No such product'})
+    }
+
+    const prod = await product.findOneAndDelete({productId: id})
+
+    if(!prod) {
+        return res.status(400).json({error: 'No such product'})
+    }
+
+  res.status(200).json(prod)
+
+})
+
+
 module.exports = router
