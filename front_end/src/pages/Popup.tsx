@@ -31,8 +31,7 @@ function Popup({ closePopup}) {
 
   return (
     <div className="popup-container">
-     <div className="popup-body">
-     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
+     <div className="m-4">
         {product &&
           product.map((p) => (
             <div key={p._id} className="bg-white p-6 rounded-lg shadow-lg">
@@ -41,7 +40,6 @@ function Popup({ closePopup}) {
           ))}
       </div>
       <button onClick={closePopup}>Close X</button>
-     </div>
      </div>
   );
 }
