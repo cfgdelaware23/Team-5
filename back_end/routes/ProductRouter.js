@@ -12,7 +12,7 @@ router.get("/", async(req, res) => {
 router.get("/get_product/:id", async(request, res) => {
     let passedInId = request.params.id;
     try {
-        let product = await Product.findById(passedInId);
+        let product = await product.findById(passedInId);
         console.log(product);
         res.status(200).json(product);
     } catch (err) {
@@ -22,11 +22,32 @@ router.get("/get_product/:id", async(request, res) => {
     return;
 })
 
-router.post("/update_product/:id", async(request, res) => {
+router.post("/create_product/:name", async(request, res) => {
+    let name = request.body.name
+    let quantitySold = request.body.quantity
+    let priceFull = request.body.full_price
+    let priceDiscount = request.body.discount_price
+    try {
+        const new_product = await product.create({
+            if (name) { name },
+            if (quantitySold) { quantitySold },
+            if (priceFull) { priceFull },
+            if (priceDiscount) { priceDiscount }
+        })
+        console.log(new_product);
+        res.status(200).json(new_product);
+    } catch (err) {
+        res.status(400).json({ error: "product not created" });
+    }
+    return;
+})
+
+
+router.put("/update_product/:id", async(request, res) => {
     let id = request.body.id;
     let quantity = request.body.quantitySold;
 
-    const product = await Product.findById(id);
+    const product = await product.findById(id);
     if (!product) {
         return res.status(404).json({ message: 'Product not found' });
     }
