@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 import UserSideBar from '../components/UserSideBar';
+import Popup from './Popup';
 
 const UserProducts = () => {
   const [products, setProducts] = useState(null);
   const [showDiscounted, setShowDiscounted] = useState(false);
+
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -55,6 +58,7 @@ const UserProducts = () => {
         </div>
       </div>
       <button
+          onClick={() => document.getElementById("popup").classList.toggle("open")}
           style={{
             backgroundColor: 'rgb(144,238,144)', 
             color: 'black', 
@@ -62,10 +66,10 @@ const UserProducts = () => {
             marginLeft: "auto", 
             marginRight: "auto", 
             display: "block"}}
-
       >
         Get a Healthy Food!
       </button>
+      <Popup />
     </div>
     </>
   );
