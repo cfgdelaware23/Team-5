@@ -28,7 +28,10 @@ function LoginPage() {
                     name="inputMemberId"
                     value={memberId}
                     required={true}
-                    onChange={e => setMemberId(e.target.value)} />
+                    onChange={e => setMemberId(e.target.value)}
+                    color="white"
+
+                     />
                     <button 
                         onClick={goToSignUpPage}
                         >
