@@ -49,8 +49,15 @@ const AdminSales = () => {
             </div>  
 
             <button
-        style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
-        >
+
+                style={{
+                    backgroundColor: 'rgb(144,238,144)', 
+                    color: 'black', 
+                    marginTop: '10px', 
+                    marginLeft: "auto", 
+                    marginRight: "30px", 
+                    display: "block"}}
+            >
                 Get A Healthy Food!
             </button>
 
