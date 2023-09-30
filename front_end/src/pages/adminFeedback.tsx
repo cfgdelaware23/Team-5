@@ -28,10 +28,9 @@ const AdminFeedback = () => {
                 <table className="min-w-full bg-white border border-gray-300">
                     <thead>
                         <tr>
-                            <th className="py-2 px-6 bg-blue-500 text-white">Product Name</th>
-                            <th className="py-2 px-6 bg-blue-500 text-white">Feedback Description</th>
-                            <th className="py-2 px-6 bg-blue-500 text-white">Positive Feedback?</th>
-                            <th className="py-2 px-6 bg-blue-500 text-white">Created At</th>
+                            <th className="py-2 px-6 bg-red-700 text-white">Product Name</th>
+                            <th className="py-2 px-6 bg-red-700 text-white">Feedback Description</th> <th className="py-2 px-6 bg-red-700 text-white">Positive Feedback?</th>
+                            <th className="py-2 px-6 bg-red-700 text-white">Created At</th>
                         </tr>
                     </thead>
                     <tbody>
