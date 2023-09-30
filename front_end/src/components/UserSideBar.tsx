@@ -30,18 +30,6 @@ const UserSideBar = () => {
 </nav>
 
 
-        {/* <aside classNameName="flex flex-col justify-center align-middle p-4 w-1/5vw h-screen bg-slate-500 text-gray-100">
-            <header classNameName="flex flex-col align-middle justify-center text-center" >
-                <img classNameName="h-auto w-40 " id="wellfare-logo" src={"../assets/wellfare-logo.png"} alt="Wellfare Logo"/>
-                <div classNameName="text-gray-100 italic font-medium text-lg">{user}</div>
-            </header>
-            <nav classNameName="flex flex-col p-2 text-white font-bold text-2xl">
-                <a classNameName="hover:text-slate-200 hover:cursor-pointer" id='home'>Home</a>
-                <a classNameName="hover:text-slate-200 hover:cursor-pointer" id='sales'>Sales</a>
-                <a classNameName="hover:text-slate-200 hover:cursor-pointer" id='feedback'>Feedback</a>
-                <a classNameName="hover:text-slate-200 hover:cursor-pointer" id='customers'>Customers</a>
-            </nav>
-        </aside> */}
         </div>
     );
 }
