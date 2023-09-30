@@ -34,7 +34,8 @@ function SignupPage() {
     }
 
     return (
-        <div>
+        <div id="signup-div">
+            <div>
             <h1 style={{ color: 'black', fontWeight: 'bold' }}>
                 User Signup
             </h1>
@@ -75,17 +76,19 @@ function SignupPage() {
                         checked={EBT_SNAP}
                         onChange={e => setEBT_SNAP(e.target.checked)} />
                 </label>
+                <br></br>
                 <button type="button" onClick={() => {
                     setFirstName('');
                     setLastName('');
                     setZipCode('');
                     setEBT_SNAP(false);
-                }} style={{ marginTop: '10px',marginRight: '20px'}}>
+                }} style={{ marginTop: '10px',marginRight: '20px', backgroundColor: "#A8EB12"}}>
                     Clear
                 </button>
-                <button type="button" onClick={handleSubmit} style={{ marginTop: '10px',marginRight: '20px'}}>
+                <button type="button" onClick={handleSubmit} style={{ backgroundColor: "#A8EB12", marginTop: '10px',marginRight: '20px'}}>
                     Submit
                 </button>
+                </div>
         </div>
     )
 }
