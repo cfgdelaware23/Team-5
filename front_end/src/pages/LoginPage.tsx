@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../app.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import SideBar from '../components/AdminSideBar';
+import UserSideBar from '../components/UserSideBar';
 
 function LoginPage() {
   const [memberId, setMemberId] = useState('');
@@ -47,8 +49,10 @@ function LoginPage() {
   else {
     return (
       <>
-    <div id="login-page-div">
-        <div>
+      <div id="login-page-div">
+        <div style={{
+        }}>
+          <UserSideBar/>
           <br></br>
           <h1>Information</h1>
           <p>Name: {name}</p>
