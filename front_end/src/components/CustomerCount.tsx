@@ -23,10 +23,9 @@ function CustomerTable() {
 
     return (
         <div>
-            <p>
-                {customerCount}
-            </p>
+            <h1>Total customers: {customerCount}</h1>
         </div>
+
     )
 }
 
