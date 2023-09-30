@@ -6,6 +6,10 @@ const feedback = require("../models/feedback");
 const router = express.Router()
 
 // routes
+router.get("/", async(req, res) => {
+    // const currAdmin = await feedback.find({isAdmin: true})
+    return
+})
 
 // Gets all feedback in JSON array
 router.get("/feedback_all", async(req, res) => {
