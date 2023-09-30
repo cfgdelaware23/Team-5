@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import React, { useState } from 'react'
 import SignupPage from './pages/signupPage'
-import LoginPage from './pages/LoginPage'
+import LoginPage from './pages/loginPage'
 import './App.css'
 
 import AdminSideBar from './components/AdminSideBar'
