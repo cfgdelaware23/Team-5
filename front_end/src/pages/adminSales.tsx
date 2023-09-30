@@ -35,10 +35,10 @@ const AdminSales = () => {
                 <table className="min-w-full bg-white border border-gray-300">
                 <thead>
                     <tr>
-                    <th className="py-2 px-6 bg-blue-500 text-white">Name</th>
-                    <th className="py-2 px-6 bg-blue-500 text-white">Quantity Sold</th>
-                    <th className="py-2 px-6 bg-blue-500 text-white">Price</th>
-                    <th className="py-2 px-6 bg-blue-500 text-white">Discounted Price</th>
+                    <th className="py-2 px-6 bg-red-700 text-white">Name</th>
+                    <th className="py-2 px-6 bg-red-700 text-white">Quantity Sold</th>
+                    <th className="py-2 px-6 bg-red-700 text-white">Price</th>
+                    <th className="py-2 px-6 bg-red-700 text-white">Discounted Price</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,8 +47,8 @@ const AdminSales = () => {
                         <tr key={p._id} className="hover:bg-gray-100">
                         <td className="py-2 px-6 border-b">{p.name}</td>
                         <td className="py-2 px-6 border-b text-center">{p.quantitySold}</td>
-                        <td className="py-2 px-6 border-b text-center">${p.priceFull}</td>
-                        <td className="py-2 px-6 border-b text-center">${p.priceDiscount}</td>
+                        <td className="py-2 px-6 border-b text-center">{p.priceFull}</td>
+                        <td className="py-2 px-6 border-b text-center">{p.priceDiscount}</td>
                         </tr>
                     ))}
                 </tbody>

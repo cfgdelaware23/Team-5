@@ -28,10 +28,10 @@ const NewCustomerTable = () => {
             <div className="w-4/5vw mb-8 sm:mx-4 lg:mx-8">
                 <table className="min-w-full bg-white border border-gray-300">
                     <tr style={{backgroundColor: 'rgb(214, 60, 35)'}}>
-                        <th className="py-2 px-6 bg-blue-500 text-white">Name</th>
-                        <th className="py-2 px-6 bg-blue-500 text-white">Qualify for Personalized Pricing</th>
-                        <th className="py-2 px-6 bg-blue-500 text-white">Address</th>
-                        <th className="py-2 px-6 bg-blue-500 text-white">Actions</th> 
+                        <th className="py-2 px-6 bg-red-700 text-white">Name</th>
+                        <th className="py-2 px-6 bg-red-700 text-white">Qualify for Personalized Pricing</th>
+                        <th className="py-2 px-6 bg-red-700 text-white">Address</th>
+                        <th className="py-2 px-6 bg-red-700 text-white">Actions</th> 
                     </tr>
                     {customers && customers.map(c => (
                         <tr key={c._id}>
@@ -41,7 +41,7 @@ const NewCustomerTable = () => {
                             <td className="py-2 px-6 border-b text-center">
                             <button
                                 onClick={() => handleEditClick(c._id)}
-                                className="text-blue-500 underline"
+                                className="text-red-700 underline"
                                 style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}>
                                 Edit
                             </button>
