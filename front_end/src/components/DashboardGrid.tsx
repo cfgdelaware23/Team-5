@@ -1,13 +1,13 @@
 import "../App.css";
-// import DashboardCard from "./DashboardCard";
+import DashboardCard from "./DashboardCard";
 
 const DashboardGrid = () => {
     return (
-        <div className="grid">
-            {/* <DashboardCard /> 
-            <DashboardCard /> 
-            <DashboardCard title="" /> 
-            <DashboardCard />  */}
+        <div className="grid col-span-1">
+            <DashboardCard header='Test' data='' /> 
+            <DashboardCard header='Test' data='' /> 
+            <DashboardCard header='Test' data='' /> 
+            <DashboardCard header='Test' data='' /> 
         </div>
     );
 }
