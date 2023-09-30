@@ -96,11 +96,13 @@ function LoginPage() {
                     required = {true}
                     onChange={e => setMemberId(e.target.value)} />
           </form>
-          <button className='bg-slate-700 text-white mx-1 font-medium w-1/2' onClick={handleSubmit} >
-            Log In 
-          </button>
+          <div className='flex justify-center'>
+            <button className='bg-slate-700 text-white mx-1 font-medium w-1/5 hover:bg-slate-600' onClick={handleSubmit} >
+              Log In 
+            </button>
+          </div>
           <div className="py-3">
-            <em><a className='hover:cursor-pointer font-medium text-slate-700' onClick={goToSignUpPage}>Don't have an account? Sign up here!</a></em>
+            <em><a className='hover:cursor-pointer font-medium text-slate-700 hover:underline hover:text-slate-600' onClick={goToSignUpPage}>Don't have an account? Sign up here!</a></em>
           </div>
       </div>
   )}
