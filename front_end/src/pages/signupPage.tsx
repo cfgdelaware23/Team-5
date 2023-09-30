@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import '../app.css'
-
+import { useNavigate } from 'react-router-dom';
 
 
 function SignupPage() {
@@ -10,6 +10,13 @@ function SignupPage() {
     const [EBT, setEBT] = useState(false)
     const [SNAP, setSNAP] = useState(false)
 
+    const navigate = useNavigate();
+
+    function goToTransactionPage() {
+        console.log("Test");
+        navigate("/transactions");
+    }
+
 
     return (
 
@@ -18,6 +25,7 @@ function SignupPage() {
                 User Signup
             </h1>
             <div>
+                <button onClick={goToTransactionPage}>Go to transactions</button>
                     <div>
                         First Name:
                     </div>
