@@ -97,12 +97,12 @@ function SignupPage() {
                 }}>
                     Clear
                 </button>
-                <button className='bg-blue-700 text-white mx-1 font-medium' type="button" onClick={handleSubmit}>
+                <button className='bg-slate-700 text-white mx-1 font-medium hover:bg-slate-600' type="button" onClick={handleSubmit}>
                     Submit
                 </button>
             </div>
             <div className="py-3">
-                <a className='hover:cursor-pointer font-medium text-blue-700' onClick={goToLoginPage}>Already have an account?</a>
+                <a className='hover:cursor-pointer font-medium text-slate-700 hover:underline hover:text-slate-600' onClick={goToLoginPage}>Already have an account?</a>
             </div>
         </div>
     )
