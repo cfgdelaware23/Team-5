@@ -85,7 +85,8 @@ const productUpdate = () => {
                                     placeholder='Discount Price' />
 
                                 <div className="justify-center">
-                                    <button className='bg-blue-700 text-white mx-1 font-medium' type="button" onClick={handleSubmit}>
+                                    <button className='bg-blue-700 text-white mx-1 font-medium' type="button" onClick={handleSubmit}
+                                    style={{marginTop: "10px"}}>
                                         Submit
                                     </button>
                                 </div>
