@@ -8,7 +8,7 @@ const router = express.Router()
 // routes
 
 // Gets all feedback in JSON array
-router.get("/feedback", async(req, res) => {
+router.get("/feedback_all", async(req, res) => {
     const allFeedback = await feedback.find({}).sort({ createdAt: -1 })
     res.status(200).json(allFeedback)
 })
