@@ -9,15 +9,15 @@ const router = express.Router()
 
 // Gets all feedback in JSON array
 router.get("/feedback", async(req, res) => {
-    const feedback = await feedback.find({}).sort({ createdAt: -1 })
-    res.status(200).json(feedback)
+    const allFeedback = await feedback.find({}).sort({ createdAt: -1 })
+    res.status(200).json(allFeedback)
 })
 
 // Gets all products 
 router.get("/products_all", async(req, res) => {
-    const products = await products.find({}).sort({ quantitySold: -1 })
+    const allProducts = await products.find({}).sort({ quantitySold: -1 })
 
-    res.status(200).json(products)
+    res.status(200).json(allProducts)
 })
 
 // Gets all customers
