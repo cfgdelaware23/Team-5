@@ -22,7 +22,7 @@ router.get("/get_product/:id", async(request, res) => {
     return;
 })
 
-router.POST("/update_product/:id", async(request, res) => {
+router.post("/update_product/:id", async(request, res) => {
     let id = request.body.id;
     let quantity = request.body.quantitySold;
 
