@@ -2,31 +2,27 @@ import { useEffect, useState } from 'react'
 import "../App.css"
 
 function CustomerTable() {
-    const [data, setData] = useState([])
+    const [customers, setCustomers] = useState(null)
 
-    const fetchData = () => {
-        fetch(`https://dummyjson.com/products`)
-            .then((response) => response.json())
-            .then((realdata) => {
-                console.log(realdata)
-                setData(realdata.products)
-                console.log(data)
-            })
-            .catch((err) => {
-                console.log(err.message)
-            })
-    }
-    const customerCount = data.length
     useEffect(() => {
-        fetchData()
+        const fetchCustomers = async() => {
+            const response = await fetch("http://localhost:4000/admin/customers_all");
+            const json = await response.json()
+ 
+ 
+            if (response.ok) {
+                setCustomers(json)
+            }
+        }
+        fetchCustomers()
     }, [])
+    const length = customers.length
 
     return (
         <div>
-            <p>
-                {customerCount}
-            </p>
+            <p>{length}</p>
         </div>
+
     )
 }
 

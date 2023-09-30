@@ -27,6 +27,8 @@ function SubmitFeedback(){
 
 return(
     <>
+    <div id="submit-feedback-div">
+        <div>
     <h1>Submit Feedback</h1>
         <p>Member Id:</p>
         <input
@@ -34,7 +36,7 @@ return(
           value={memberId}
           required={true}
           onChange={(e) => setMemberId(e.target.value)}
-          style={{ backgroundColor: 'grey', color: 'white' }}
+          style={{}}
         />
         <p>Product Id:</p>
         <input
@@ -42,7 +44,7 @@ return(
           value={productId}
           required={true}
           onChange={(e) => setProductId(e.target.value)}
-          style={{ backgroundColor: 'grey', color: 'white' }}
+          style={{}}
         />
         <p>Feedback: </p>
         <input
@@ -50,7 +52,7 @@ return(
           value={feedback}
           required={true}
           onChange={(e) => setFeedback(e.target.value)}
-          style={{ backgroundColor: 'grey', color: 'white' }}
+          style={{}}
         />
         <p>Positive Feedback?: </p>
         <label>
@@ -62,8 +64,11 @@ return(
                 onChange={e => setIsPositive(e.target.checked)} />
         </label>
         <br></br>
+        <br></br>
         <button onClick={handleSubmit}>Submit Feedback Form</button>
 
+</div>
+</div>
     </>
 )
 }

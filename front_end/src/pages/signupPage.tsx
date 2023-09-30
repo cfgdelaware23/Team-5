@@ -9,12 +9,13 @@ function SignupPage() {
     const [lastName, setLastName] = useState('')
     const [zipCode, setZipCode] = useState('')
     const [EBT_SNAP, setEBT_SNAP] = useState(false);
+    const [WIC, setWIC] = useState(false);
 
     const navigate = useNavigate();
 
     function goToTransactionPage() {
         console.log("Test");
-        navigate("/transactions");
+        navigate("/customer/products");
     }
 
     function handleSubmit() {
@@ -22,7 +23,7 @@ function SignupPage() {
         console.log(zipCode)
         axios.post("http://localhost:4000/customer/save_customer", {
             name: firstName + " " + lastName,
-            qualify: EBT_SNAP,
+            qualify: EBT_SNAP, WIC,
             address: zipCode,
             isAdmin: false,
         }).then(function (response) {
@@ -31,18 +32,19 @@ function SignupPage() {
         }).catch(function (error) {
             console.log(error);
         })
+        navigate("/customer/products");
     }
 
     return (
 
-        <div >
-            <h1>
+        <div style={{textAlign: 'center'}}>
+            <h1 style={{ color: 'red', fontWeight: 'bold'}}>
                 User Signup
             </h1>
             <div>
                 <button 
                 onClick={goToTransactionPage}
-                color="white"
+                style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px' }}
                 >Go to transactions</button>
                     <div>
                         First Name:
@@ -81,6 +83,15 @@ function SignupPage() {
                         checked={EBT_SNAP}
                         onChange={e => setEBT_SNAP(e.target.checked)} />
                 </label>
+        
+                <label>
+                        WIC:
+                    <input
+                        name="inputEBT"
+                        type="checkbox"
+                        checked={WIC}
+                        onChange={e => setWIC(e.target.checked)} />
+                </label>
             </div>
             <div>
                 <button type="button" onClick={() => {
@@ -88,10 +99,11 @@ function SignupPage() {
                     setLastName('');
                     setZipCode('');
                     setEBT_SNAP(false);
-                }}>
+                    setWIC(false);
+                }} style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px',marginRight: '20px'}}>
                     Clear
                 </button>
-                <button type="button" onClick={handleSubmit}>
+                <button type="button" onClick={handleSubmit} style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px',marginRight: '20px'}}>
                     Submit
                 </button>
             </div>

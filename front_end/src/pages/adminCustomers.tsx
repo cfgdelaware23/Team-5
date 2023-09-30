@@ -1,25 +1,21 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../App.css"
-import TransactionTable from '../components/TransactionTable'
-import CustomerTable from '../components/CustomerTable'
+import NewCustomerTable from '../components/tables/NewCustomerTable'
 import CustomerCount from '../components/CustomerCount'
+import SideBar from '../components/AdminSideBar'
+
 
 function adminCustomers() {
 
-
     return (
-        <div >
-        
-            <div>
-            <h1>Customer Summary</h1>
-            </div> 
-            <div>
-            <CustomerCount />
+        <div className='flex h-full w-full'>
+            <SideBar />
+            <div className='flex flex-col'>
+                <h1>Customer Summary</h1>
+                
+                <NewCustomerTable />
             </div>
-            <div>
-                <CustomerTable/>
-            </div>
-            </div>
+        </div>
     )
 }
 
