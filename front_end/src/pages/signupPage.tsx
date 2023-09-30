@@ -34,15 +34,13 @@ function SignupPage() {
     }
 
     return (
-
-        <div >
-            <h1 style={{ color: 'red', fontWeight: 'bold' }}>
+        <div>
+            <h1 style={{ color: 'black', fontWeight: 'bold' }}>
                 User Signup
             </h1>
-            <div>
                 <button 
                 onClick={goToTransactionPage}
-                style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px' }}
+                style={{ color: 'black', marginTop: '10px' }}
                 >Go to transactions</button>
                     <div>
                         First Name:
@@ -68,11 +66,7 @@ function SignupPage() {
                         name="inputZipCode"
                         value={zipCode}
                         onChange={e => setZipCode(e.target.value)} />
-            </div>
-            <div>
                 <p> Please select all that apply:</p>
-            </div>
-            <div>
                 <label>
                         EBT:
                     <input
@@ -81,20 +75,17 @@ function SignupPage() {
                         checked={EBT_SNAP}
                         onChange={e => setEBT_SNAP(e.target.checked)} />
                 </label>
-            </div>
-            <div>
                 <button type="button" onClick={() => {
                     setFirstName('');
                     setLastName('');
                     setZipCode('');
                     setEBT_SNAP(false);
-                }} style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px',marginRight: '20px'}}>
+                }} style={{ marginTop: '10px',marginRight: '20px'}}>
                     Clear
                 </button>
-                <button type="button" onClick={handleSubmit} style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px',marginRight: '20px'}}>
+                <button type="button" onClick={handleSubmit} style={{ marginTop: '10px',marginRight: '20px'}}>
                     Submit
                 </button>
-            </div>
         </div>
     )
 }
