@@ -1,10 +1,12 @@
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import SignupPage from './pages/SignupPage'
 import './App.css'
 import TransactionTable from './components/TransactionTable'
 // import SideBar from './components/SideBar'
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from './pages/LoginPage'
+
 
 function App() {
 
@@ -19,3 +21,4 @@ function App() {
 }
 
 export default App
+
