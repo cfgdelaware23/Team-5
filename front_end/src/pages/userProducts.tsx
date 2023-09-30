@@ -1,49 +1,58 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import '../App.css';
 
+const UserProducts = () => {
+  const [products, setProducts] = useState(null);
+  const [showDiscounted, setShowDiscounted] = useState(false);
 
-import "../App.css"
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('http://localhost:4000/admin/products_all');
+        if (response.ok) {
+          const json = await response.json();
+          setProducts(json);
+        }
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
 
+    fetchProducts();
+  }, []);
 
-const NewProductTable = () => {
-   const [products, setProduct] = useState(null)
+  return (
+    <div className="flex justify-center items-center h-full">
+      <div className="w-4/5vw mb-8 sm:mx-4 lg:mx-8">
+        <div className="flex justify-end mb-4">
+          <label className="mr-4">
+            Show Discounted Price
+            <input
+              type="checkbox"
+              checked={showDiscounted}
+              onChange={() => setShowDiscounted(!showDiscounted)}
+              className="ml-2"
+            />
+          </label>
+        </div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {products &&
+            products.map((p) => (
+              <div key={p._id} className="bg-white p-6 rounded-lg shadow-lg">
+                <h2 className="text-xl font-bold mb-2">{p.name}</h2>
+                <p className={`text-lg mb-2 ${showDiscounted ? 'line-through' : ''}`}>
+                  Regular Price: {p.priceFull}
+                </p>
+                {showDiscounted && (
+                  <p className="text-lg mb-2">Discounted Price: {p.priceDiscount}</p>
+                )}
+              </div>
+            ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
-   useEffect(() => {
-       const fetchProduct = async() => {
-           const response = await fetch("http://localhost:4000/admin/products_all");
-           const json = await response.json()
-
-
-           if (response.ok) {
-               setProduct(json)
-           }
-       }
-       fetchProduct()
-   }, [])
-
-
-   return (
-       <div className="grid grid-cols-2 w-4/5vw h-full mb-8 sm:mx-4 lg:mx-8 gap-4">
-           <table className="shadow-lg bg-white">
-                   <tr>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Name</th>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Quantity Sold</th>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Price</th>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Discounted Price</th>
-                   </tr>
-                   {products && products.map(p => (
-                       <tr key={p._id}>
-                           <td className="border-black">{p.name}</td>
-                           <td className="border-black">{p.quantitySold}</td>
-                           <td className="border-black">{p.priceFull}</td>
-                           <td className="border-black">{p.priceDiscount}</td>
-                       </tr>
-                   ))}
-           </table>
-       </div>
-   )
-}
-
-
-export default NewProductTable
-
+export default UserProducts;
