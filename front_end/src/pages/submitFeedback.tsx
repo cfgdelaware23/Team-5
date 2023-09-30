@@ -67,7 +67,7 @@ return(
         </label>
         <br></br>
         <br></br>
-        <button onClick={handleSubmit}>Submit Feedback Form</button>
+        <button style={{color: 'rgb(214,60,35)'}} onClick={handleSubmit}>Submit Feedback Form</button>
 
 </div>
 </div>
