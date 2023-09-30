@@ -48,8 +48,8 @@ const AdminSales = () => {
                         <tr key={p._id} className="hover:bg-gray-100">
                         <td className="py-2 px-6 border-b">{p.name}</td>
                         <td className="py-2 px-6 border-b text-center">{p.quantitySold}</td>
-                        <td className="py-2 px-6 border-b text-center">${p.priceFull}</td>
-                        <td className="py-2 px-6 border-b text-center">${p.priceDiscount}</td>
+                        <td className="py-2 px-6 border-b text-center">{p.priceFull}</td>
+                        <td className="py-2 px-6 border-b text-center">{p.priceDiscount}</td>
                         </tr>
                     ))}
                 </tbody>

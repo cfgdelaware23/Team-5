@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 import UserSideBar from '../components/UserSideBar';
-import Popup from './Popup';
+import Popup from './popup';
 
 const UserProducts = () => {
   const [products, setProducts] = useState(null);

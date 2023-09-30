@@ -41,7 +41,7 @@ const NewCustomerTable = () => {
                             <td className="py-2 px-6 border-b text-center">
                             <button
                                 onClick={() => handleEditClick(c._id)}
-                                className="text-blue-500 underline"
+                                className="text-red-700 underline"
                                 style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}>
                                 Edit
                             </button>
