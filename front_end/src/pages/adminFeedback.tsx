@@ -1,7 +1,8 @@
 function AdminFeedback(){
 return(
-    <></>
+    <>
+    </>
 )
 }
 
-export default AdminFeedback
+export default AdminFeedback;
