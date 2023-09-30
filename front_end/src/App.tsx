@@ -21,7 +21,6 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<LoginPage />} />
-      <Route path="/transactions" element={<NewProductTable />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/submitfeedback" element={<SubmitFeedback />} />
       <Route path="/admin/customers" element={<AdminCustomers />} />
