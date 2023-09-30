@@ -21,19 +21,20 @@ function CustomerTable() {
     }, [])
 
     return (
-        <div>
+        <div className="grid grid-cols-2 w-4/5vw h-full mb-8 sm:mx-4 lg:mx-8 gap-4">
 
-            <table className="shadow-lg bg-white">
+            <table className="shadow-lg bg-white w-4/5vw">
                     <tr>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Name</th>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Qualify</th>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Zipcode</th>
+                        <th className="bg-blue-100 border-2 text-left px-8 py-4">Name</th>
+                        <th className="bg-blue-100 border-2 text-left px-8 py-4">Qualify</th>
+                        <th className="bg-blue-100 border-2 text-left px-8 py-4">Zipcode</th>
                     </tr>
                     {data.map((user, index) => (
                         <tr key={index}>
                             <td className="border-black">{user.name}</td>
                             <td className="border-black">{user.qualify}</td>
-                            <td className="border-black">{user.Zipcode}</td>                        </tr>
+                            <td className="border-black">{user.Zipcode}</td>                        
+                        </tr>
                     ))}
             </table>
         </div>
