@@ -5,6 +5,11 @@ let productSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    productId: {
+        type: Number,
+        required: true
+    }, 
+    
     quantitySold: {
         type: Number,
         required: true,
@@ -17,6 +22,12 @@ let productSchema = new mongoose.Schema({
         type: Number,
         required: true
     }
+    // , 
+    // image: {
+    //     data: Buffer,
+    //     contentType: String,
+    //     required: false
+    // }
 }, { timestamps: true })
 
 module.exports = mongoose.model("Product", productSchema)
