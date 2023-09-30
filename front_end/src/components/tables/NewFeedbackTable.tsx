@@ -26,17 +26,17 @@ const NewFeedbackTable = () => {
        <div className="grid grid-cols-2 w-4/5vw h-full mb-8 sm:mx-4 lg:mx-8 gap-4">
            <table className="shadow-lg bg-white">
                    <tr>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Customer ID</th>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Product ID</th>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Positive Feedback</th>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Feedback Description</th>
+                       <th className="py-2 px-6 bg-blue-500 text-white">Customer ID</th>
+                       <th className="py-2 px-6 bg-blue-500 text-white">Product ID</th>
+                       <th className="py-2 px-6 bg-blue-500 text-white">Positive Feedback</th>
+                       <th className="py-2 px-6 bg-blue-500 text-white">Feedback Description</th>
                    </tr>
                    {feedback && feedback.map(f => (
                        <tr key={f._id}>
-                           <td className="border-black">{f.customerId}</td>
-                           <td className="border-black">{f.productId}</td>
-                           <td className="border-black">{f.feedbackPositive}</td>
-                           <td className="border-black">{f.feedbackDescription}</td>
+                           <td className="py-2 px-6 border-b">{f.customerId}</td>
+                           <td className="py-2 px-6 border-b text-center">{f.productId}</td>
+                           <td className="py-2 px-6 border-b text-center">{f.feedbackPositive}</td>
+                           <td className="py-2 px-6 border-b text-center">{f.feedbackDescription}</td>
                        </tr>
                    ))}
            </table>

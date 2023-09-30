@@ -37,7 +37,7 @@ function SignupPage() {
 
     return (
 
-        <div style={{textAlign: 'center'}}>
+        <div style={{textAlign: 'center', fontFamily: 'helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;'}}>
             <h1 style={{ color: 'red', fontWeight: 'bold'}}>
                 User Signup
             </h1>
