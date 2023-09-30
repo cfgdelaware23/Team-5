@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 import UserSideBar from '../components/UserSideBar';
+import Popup from './Popup';
 
 const UserProducts = () => {
   const [products, setProducts] = useState(null);
   const [showDiscounted, setShowDiscounted] = useState(false);
+
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -45,15 +48,28 @@ const UserProducts = () => {
               <div key={p._id} className="bg-white p-6 rounded-lg shadow-lg">
                 <h2 className="text-xl font-bold mb-2">{p.name}</h2>
                 <p className={`text-lg mb-2 ${showDiscounted ? 'line-through' : ''}`}>
-                  Regular Price: {p.priceFull}
+                  Regular Price: ${p.priceFull}
                 </p>
                 {showDiscounted && (
-                  <p className="text-lg mb-2">Discounted Price: {p.priceDiscount}</p>
+                  <p className="text-lg mb-2">Discounted Price: ${p.priceDiscount}</p>
                 )}
               </div>
             ))}
         </div>
       </div>
+      <button
+          // onClick={() => document.getElementById("popup").classList.toggle("open")}
+          style={{
+            backgroundColor: 'rgb(144,238,144)', 
+            color: 'black', 
+            marginTop: '25px', 
+            marginLeft: "auto", 
+            marginRight: "auto", 
+            display: "block"}}
+      >
+        Get a Healthy Food!
+      </button>
+      {/* <Popup /> */}
     </div>
     </>
   );

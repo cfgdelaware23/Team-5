@@ -20,7 +20,7 @@ const NewCustomerTable = () => {
     }, [])
 
     const handleEditClick = (customerId) => {
-        navigate('/edit-customer/${customerId}');
+        navigate(`/edit/customer/${customerId}`);
     };
 
     return (
