@@ -5,6 +5,11 @@ let productSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    productId: {
+        type: Number,
+        required: true
+    }, 
+    
     quantitySold: {
         type: Number,
         required: true,

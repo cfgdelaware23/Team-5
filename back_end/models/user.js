@@ -5,6 +5,10 @@ let customerSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    customerId: {
+        type: Number,
+        required: true
+    }, 
     qualify: {
         type: Boolean,
         required: true,
