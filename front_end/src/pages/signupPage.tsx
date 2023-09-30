@@ -25,7 +25,10 @@ function SignupPage() {
                 User Signup
             </h1>
             <div>
-                <button onClick={goToTransactionPage}>Go to transactions</button>
+                <button 
+                onClick={goToTransactionPage}
+                color="white"
+                >Go to transactions</button>
                     <div>
                         First Name:
                     </div>
