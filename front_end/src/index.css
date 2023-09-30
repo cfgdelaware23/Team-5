@@ -13,6 +13,19 @@
   -webkit-text-size-adjust: 100%;
 }
 
+
+body {
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 24px;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -20,12 +33,18 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #A8EB12;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+#login-page-div, #signup-div, #submit-feedback-div {
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
 }
 
+input {
+  border-radius: 5px;
+}
