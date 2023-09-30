@@ -21,6 +21,12 @@ const AdminSales = () => {
         fetchProduct();
     }, []);
 
+    if(products != null){
+        products.sort((a,b) => -1*(a.quantitySold - b.quantitySold));
+
+    }
+    
+
 
     return (
         <div className="flex justify-center items-center h-full">
