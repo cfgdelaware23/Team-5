@@ -15,6 +15,7 @@ function LoginPage() {
     navigate('/signup');
   };
 
+<<<<<<< HEAD
   return (
     <div>
       <h1>Login</h1>
@@ -44,6 +45,36 @@ function LoginPage() {
       </div>
     </div>
   );
+=======
+    return (
+
+        <div >
+            <h1>
+                Login
+            </h1>
+            <div>
+                <div>
+                    Member ID:
+                </div>
+
+                <input className="border-2 border-black-500"
+                    name="inputMemberId"
+                    value={memberId}
+                    required={true}
+                    onChange={e => setMemberId(e.target.value)}
+                    color="white"
+
+                     />
+                    <button 
+                        onClick={goToSignUpPage}
+                        >
+                            Sign Up Here!
+                        </button>
+                    </div>
+
+            </div>
+    )
+>>>>>>> dbbe47fb0fd2cf2d6fc3958411fe8043f3250504
 }
 
 export default LoginPage;
