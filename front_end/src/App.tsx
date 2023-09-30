@@ -1,11 +1,10 @@
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
-import SignupPage from './pages/SignupPage'
-import LoginPage from './pages/LoginPage'
+import SignupPage from './pages/signupPage'
+import LoginPage from './pages/loginPage'
 import './App.css'
 import TransactionTable from './components/TransactionTable'
-// import SideBar from './components/SideBar'
 
 import SideBar from './components/SideBar'
 import AdminCustomers from './pages/AdminCustomers'
