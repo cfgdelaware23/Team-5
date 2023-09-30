@@ -39,7 +39,7 @@ const UserProducts = () => {
         <div className="flex justify-center items-center h-full">
           <div className="w-4/5vw sm:mx-4 lg:mx-8">
             <div className="flex justify-center mb-4 bg-slate-700/25 lg:w-1/4 rounded">
-              <label className="mx-4 font-bold">Show Discounted Price</label>
+              <label style={{display: 'inline-flex', padding: '0.6em 1.2em'}} className="mx-4 font-bold">Show Discounted Price</label>
                 <input 
                   type="checkbox"
                   checked={showDiscounted}

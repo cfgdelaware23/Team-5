@@ -36,20 +36,31 @@ router.get("/", async(req, res) => {
 // Gets product with id
 router.get("/get_product/:id", async(request, res) => {
     let passedInId = request.params.id;
-    if (!mongoose.Types.ObjectId.isValid(passedInId)) {
-        return res.status(404).json({error: 'no such product'})
-      }
-
+    
     try {
-        let product = await product.findById(passedInId);
-          
-        console.log(product);
-        res.status(200).json(product);
-    } catch (err) {
+        let productInstance = await product.findById(passedInId);
+        res.status(200).json(productInstance);
+    }
+    catch (err) {
+        console.log(err);
         res.status(404).json({ mssg: "product not found" })
-        return;
     }
     return;
+
+    // if (!mongoose.Types.ObjectId.isValid(passedInId)) {
+    //     return res.status(404).json({error: 'no such product'})
+    //   }
+
+    // try {
+    //     let product = await product.findById(passedInId);
+          
+    //     console.log(product);
+    //     res.status(200).json(product);
+    // } catch (err) {
+    //     res.status(404).json({ mssg: "product not found" })
+    //     return;
+    // }
+    // return;
 })
 
 

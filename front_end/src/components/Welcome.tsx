@@ -8,7 +8,7 @@ const Welcome = () => {
                 Welcome back, <span className='italic'>{user}</span>
             </h1>
         </>
-    ) 
+    )
 };
 
 export default Welcome

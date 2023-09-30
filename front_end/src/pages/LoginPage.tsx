@@ -125,7 +125,7 @@ function LoginPage() {
   else {
     return (
       <>
-        <div className='flex h-full w-full justify-center align-middle'>
+        <div className='flex h-full w-full justify-left align-middle'>
           <AdminSideBar />
           <div className='flex flex-col'>
           <div id="login-page-div">
