@@ -19,9 +19,9 @@ function LoginPage() {
   };
 
   return (
-    <div>
-      <h1 style={{ color: 'red', fontWeight: 'bold' }}>Login</h1>
+    <div id="login-page-div">
       <div>
+      <h1 style={{ color: 'black', fontStyle: "bold", fontSize: '24px', textAlign: "center", marginBottom: "10px"}}>Login</h1>
         <div>Member ID:</div>
         <input className="border-2 border-black-500"
                         name="inputFirstName"
@@ -38,14 +38,14 @@ function LoginPage() {
                         <div>
         <button
           onClick={handleLogin}
-          style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px' }}
+          style={{ backgroundColor: '#A8EB12', color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
         >
           <h1>Login Here</h1>
         </button>
         </div>
           <button
             onClick={goToSignUpPage}
-            style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px' }}
+          style={{ backgroundColor: '#A8EB12', color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
           >
             Sign Up Here!
           </button>
