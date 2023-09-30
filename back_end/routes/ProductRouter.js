@@ -2,13 +2,20 @@ const express = require("express")
 const product = require("../models/product")
 const router = express.Router()
 
+const multer = require("multer") // for image processing
+const storage = multer.memoryStorage()
+const upload = multer({ storage: storage })
+
 // routes
+
+// Gets all products
 router.get("/", async(req, res) => {
     const allProducts = await product.find({}).sort({ quantitySold: -1 })
 
     res.status(200).json(allProducts)
 })
 
+// Gets product with id
 router.get("/get_product/:id", async(request, res) => {
     let passedInId = request.params.id;
     try {
@@ -21,6 +28,7 @@ router.get("/get_product/:id", async(request, res) => {
     }
     return;
 })
+
 
 router.post("/create_product/:name/:quantity/:full/:discount", async(request, res) => {
     let name = request.body.name
@@ -35,6 +43,7 @@ router.post("/create_product/:name/:quantity/:full/:discount", async(request, re
             if (priceDiscount) { priceDiscount }
         })
         console.log(new_product);
+
         res.status(200).json(new_product);
     } catch (err) {
         res.status(400).json({ error: "product not created" });
@@ -42,7 +51,7 @@ router.post("/create_product/:name/:quantity/:full/:discount", async(request, re
     return;
 })
 
-
+// updates product
 router.put("/update_product/:id/:quantitySold", async(request, res) => {
     let id = request.body.id;
     let quantity = request.body.quantitySold;
@@ -77,5 +86,27 @@ router.delete("/delete_product/:id", async(request, res) => {
 
 })
 
+// uploads image for product w productId
+router.post("/products/:productId/upload_image", upload.single("image"), async (req, res) => {
+    try {
+        const productId = req.params.productId;
+        const product = await product.findById(productId);
+
+        if (!product) {
+            return res.status(404).json({ error: "Product not found." });
+        }
+
+        product.image.data = req.file.buffer;
+        product.image.contentType = req.file.mimetype;
+
+        await product.save();
+
+        res.status(200).json({ message: "Image uploaded successfully." });
+
+    } catch (error) {
+        console.error(error);
+        res.status(404).json({ error: "Image unable to be uploaded" });
+    }
+});
 
 module.exports = router
