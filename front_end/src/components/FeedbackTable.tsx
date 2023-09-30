@@ -24,11 +24,10 @@ function TransactionTable() {
         <div>
             <table className="shadow-lg bg-white">
                     <tr>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Name</th>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Brand</th>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Image</th>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Price</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Customer</th>
                         <th className="bg-blue-100 border text-left px-8 py-4">Rating</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Description</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Product</th>
                     </tr>
                     {data.map((item, index) => (
                         <tr key={index}>
