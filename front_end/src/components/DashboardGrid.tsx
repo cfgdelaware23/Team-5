@@ -17,9 +17,9 @@ const DashboardGrid = () => {
                 header='Quick Links' 
                 data={
                     quickLinks.map((link) => 
-                        <link key={quickLinks.displayText}>
-                            <b><a href={quickLinks.url}>
-                                {quickLinks.displayText}  
+                        <link key={link.displayText}>
+                            <b><a href={link.url}>
+                                {link.displayText}  
                             </a></b>
                         </link>
                     )
