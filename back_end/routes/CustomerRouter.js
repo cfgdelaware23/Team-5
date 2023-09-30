@@ -84,23 +84,33 @@ router.get("/retrieve_feedback/:id", async (request, res) => {
 });
 
 router.post("/feedback_create", async (request, res) => {
-    let id = request.body.customerId
-    let feedbackPositive = request.body.feedbackPositive
-    let feedbackDescription = request.body.feedbackDescription  
-    let productId = request.body.productId
-
     try {
-        const feedback = await Feedback.create({
-            if (id) {id}, 
-            if (feedbackPositive) {feedbackPositive}, 
-            if (feedbackDescription) {feedbackDescription},
-            if (productId) {productId}
-        })
+        let feedbackPositive = request.body.feedbackPositive
+        let feedbackDescription = request.body.feedbackDescription  
+        let productId = request.body.productId
+        let customerId = request.body.customerId
+
+        let feedbackData = {};
+        if (feedbackPositive !== undefined) {
+            feedbackData.feedbackPositive = feedbackPositive
+        }
+        if (feedbackDescription !== undefined) {
+            feedbackData.feedbackDescription = feedbackDescription
+        }
+        if (productId !== undefined) {
+            feedbackData.productId = productId
+        }
+        if (customerId !== undefined) {
+            feedbackData.customerId = customerId
+        }
+
+        const feedback = await Feedback.create(feedbackData);
         console.log(feedback);
         res.status(200).json(feedback);
     }
     catch (err) {
-        res.status(400).json({error: "customer not created"});
+        console.log(err);
+        res.status(400).json({error: "feedback not created"});
     }
 })
 
