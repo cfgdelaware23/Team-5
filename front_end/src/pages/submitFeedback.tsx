@@ -25,54 +25,51 @@ function SubmitFeedback(){
 
         navigate("/customer/products");
     }
+    return(
+        <>
+            <UserSideBar/>
+            <div className='flex flex-col w-screen h-full justify-center items-top text-center'>
+                <form id="submit-feedback-div" className='flex flex-col align-middle items-center font-bold text-left w-full p-4'>
+                    <h1 className='font-extrabold text-4xl m-4 uppercase' >Submit Feedback</h1>
+                        <label>Member Id:</label>
+                            <input
+                            name="inputMemberId"
+                            value={memberId}
+                            required={true}
+                            onChange={(e) => setMemberId(e.target.value)}
+                            className="border-2 border-black-500"
+                            />
+                    
+                        <label>Product ID:</label>
+                        <input
+                            value={productId}
+                            required={true}
+                            onChange={(e) => setProductId(e.target.value)}
+                            className="border-2 border-black-500"
+                            />
 
-return(
-    <>
-    <UserSideBar/>
-    <div id="submit-feedback-div">
-        <div>
-    <h1>Submit Feedback</h1>
-        <p>Member Id:</p>
-        <input
-          name="inputMemberId"
-          value={memberId}
-          required={true}
-          onChange={(e) => setMemberId(e.target.value)}
-          style={{}}
-        />
-        <p>Product Id:</p>
-        <input
-          name="productIdInput"
-          value={productId}
-          required={true}
-          onChange={(e) => setProductId(e.target.value)}
-          style={{}}
-        />
-        <p>Feedback: </p>
-        <input
-          name="feedback"
-          value={feedback}
-          required={true}
-          onChange={(e) => setFeedback(e.target.value)}
-          style={{}}
-        />
-        <label>
-            <p></p>
-        Positive Feedback?:  
-            <input
-                name="inputEBT"
-                type="checkbox"
-                checked={isPositive}
-                onChange={e => setIsPositive(e.target.checked)} />
-        </label>
-        <br></br>
-        <br></br>
-        <button style={{backgroundColor: 'rgb(214,60,35)', color: 'black'}} onClick={handleSubmit}>Submit Feedback Form</button>
-
-</div>
-</div>
-    </>
-)
+                        <label>Feedback:</label>
+                        <input
+                            name="feedback"
+                            value={feedback}
+                            required={true}
+                            onChange={(e) => setFeedback(e.target.value)}
+                            className="border-2 border-black-500"
+                            />
+                        <div className='mx-2'>
+                            <label className="font-medium">Positive experience?</label>
+                            <input
+                                name="inputEBT"
+                                type="checkbox"
+                                checked={isPositive}
+                                onChange={e => setIsPositive(e.target.checked)} />
+                            <br></br>
+                            <button className='bg-slate-700 text-white mx-1 font-medium hover:bg-slate-600' type="button" onClick={handleSubmit}>Submit Feedback Form</button>
+                        </div>
+                </form>
+            </div>
+        </>
+    )
 }
 
 export default SubmitFeedback
