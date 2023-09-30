@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import "../App.css"
 import TransactionTable from '../components/TransactionTable'
+import CustomerTable from '../components/CustomerTable'
 
 function adminCustomers() {
 
@@ -8,8 +9,7 @@ function adminCustomers() {
     return (
 
         <div >
-            <TransactionTable />
-
+<CustomerTable/>
             </div>
     )
 }
