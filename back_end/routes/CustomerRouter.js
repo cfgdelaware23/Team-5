@@ -52,12 +52,14 @@ router.post("/feedback_create", async (request, res) => {
     let id = request.body.customerId
     let feedbackPositive = request.body.feedbackPositive
     let feedbackDescription = request.body.feedbackDescription  
+    let productId = request.body.productId
 
     try {
         const feedback = await Feedback.create({
             if (id) {id}, 
             if (feedbackPositive) {feedbackPositive}, 
-            if (feedbackDescription) {feedbackDescription}
+            if (feedbackDescription) {feedbackDescription},
+            if (productId) {productId}
         })
         console.log(feedback);
         res.status(200).json(feedback);
