@@ -6,7 +6,7 @@ import LoginPage from './pages/LoginPage'
 import './App.css'
 import TransactionTable from './components/TransactionTable'
 import SideBar from './components/SideBar'
-
+import AdminCustomers from './pages/AdminCustomers'
 
 function App() {
 
@@ -16,6 +16,7 @@ function App() {
       <Route path="/" element={<LoginPage />} />
       <Route path="/transactions" element={<TransactionTable />} />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/adminCustomers" element={<AdminCustomers />} />
     </Routes>
     </BrowserRouter>
   )
