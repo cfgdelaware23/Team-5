@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 import AdminSideBar from '../components/AdminSideBar';
+import { useNavigate } from 'react-router-dom';
 
 const AdminSales = () => {
     const [products, setProduct] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -25,7 +27,10 @@ const AdminSales = () => {
         products.sort((a,b) => -1*(a.quantitySold - b.quantitySold));
 
     }
-    
+
+   const handleEditProduct = (productName) => {
+    navigate(`/edit/product/${productName}`);
+    };
 
 
     return (
@@ -40,6 +45,7 @@ const AdminSales = () => {
                     <th className="py-2 px-6 bg-red-700 text-white">Quantity Sold</th>
                     <th className="py-2 px-6 bg-red-700 text-white">Price</th>
                     <th className="py-2 px-6 bg-red-700 text-white">Discounted Price</th>
+                    <th className="py-2 px-6 bg-red-700 text-white">Actions</th> 
                     </tr>
                 </thead>
                 <tbody>
@@ -50,7 +56,16 @@ const AdminSales = () => {
                         <td className="py-2 px-6 border-b text-center">{p.quantitySold}</td>
                         <td className="py-2 px-6 border-b text-center">{p.priceFull}</td>
                         <td className="py-2 px-6 border-b text-center">{p.priceDiscount}</td>
+                        <td className="py-2 px-6 border-b text-center">
+                            <button
+                                onClick={() => handleEditProduct(p.name)}
+                                className="text-red-700 underline"
+                                style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}>
+                                Edit
+                            </button>
+                            </td>
                         </tr>
+                        
                     ))}
                 </tbody>
                 </table>
