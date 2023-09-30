@@ -33,7 +33,7 @@ const UserProducts = () => {
       <div className='flex w-screen justify-center align-center m-5'>
       <div>
     <button onClick={() => setOpen(true)}>Show a Product</button>
-{open ? <Popup text="Hello there!" closePopup={() => setOpen(false)} /> : null}
+{open ? <Popup closePopup={() => setOpen(false)} /> : null}
    </div>
         <div className="flex justify-center items-center h-full">
           <div className="w-4/5vw sm:mx-4 lg:mx-8">
