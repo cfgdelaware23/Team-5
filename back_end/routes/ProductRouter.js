@@ -22,11 +22,11 @@ router.get("/get_product/:id", async(request, res) => {
     return;
 })
 
-router.post("/create_product/:name", async(request, res) => {
+router.post("/create_product/:name/:quantity/:full/:discount", async(request, res) => {
     let name = request.body.name
     let quantitySold = request.body.quantity
-    let priceFull = request.body.full_price
-    let priceDiscount = request.body.discount_price
+    let priceFull = request.body.full
+    let priceDiscount = request.body.discount
     try {
         const new_product = await product.create({
             if (name) { name },
@@ -43,7 +43,7 @@ router.post("/create_product/:name", async(request, res) => {
 })
 
 
-router.put("/update_product/:id", async(request, res) => {
+router.put("/update_product/:id/:quantitySold", async(request, res) => {
     let id = request.body.id;
     let quantity = request.body.quantitySold;
 

@@ -147,4 +147,23 @@ router.put("/feedback_update/:id", async (request, res) => {
 
 });
 
+// Delete customer w id
+router.delete("/delete_customer/:id", async(request, res) => {
+
+    const {id} = request.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json({error: 'No such customer'})
+    }
+
+    const cust = await Customer.findOneAndDelete({customerId: id})
+
+    if(!cust) {
+        return res.status(400).json({error: 'No such customer'})
+    }
+
+  res.status(200).json(customer)
+
+})
+
 module.exports = router
