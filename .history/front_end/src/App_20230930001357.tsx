@@ -5,13 +5,16 @@ import SignupPage from './pages/signupPage'
 import LoginPage from './pages/LoginPage'
 import './App.css'
 import TransactionTable from './components/TransactionTable'
+<<<<<<< HEAD
 // import SideBar from './components/SideBar'
 
+=======
 import SideBar from './components/SideBar'
 import AdminCustomers from './pages/adminCustomers'
 import AdminFeedback from './pages/adminFeedback'
 import AdminIndex from './pages/adminIndex'
 import AdminSales from './pages/adminSales'
+>>>>>>> 5645d4b5791d3488a17b90843594cf581c369e56
 
 function App() {
 

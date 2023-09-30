@@ -23,6 +23,8 @@ function LoginPage() {
     navigate('/signup');
   };
 
+<<<<<<< HEAD
+<<<<<<< HEAD
   return (
     <div>
       <h1>Login</h1>
@@ -52,6 +54,8 @@ function LoginPage() {
       </div>
     </div>
   );
+=======
+=======
     // interface dataResponse {
     //     qualify: boolean,
     //     isAdmin: boolean,
@@ -76,6 +80,42 @@ function LoginPage() {
             console.log(error);
         })
     }
-  }
-   
+
+>>>>>>> 5645d4b5791d3488a17b90843594cf581c369e56
+    return (
+
+        <div >
+            <h1>
+                Login
+            </h1>
+            <div>
+                <div>
+                    Member ID:
+                </div>
+
+                <input className="border-2 border-black-500"
+                    name="inputMemberId"
+                    value={memberId}
+                    required={true}
+                    onChange={e => setMemberId(e.target.value)}
+                    color="white"
+
+                     />
+                    <button 
+                        onClick={handleSubmit}
+                        >
+                            Login Here!
+                        </button>
+
+<br>
+</br>
+<p>Not a user? Go to sign up</p>
+                        <button onClick={goToSignUpPage}>Go to sign up</button>
+                    </div>
+
+            </div>
+    )
+>>>>>>> dbbe47fb0fd2cf2d6fc3958411fe8043f3250504
+}
+
 export default LoginPage;
