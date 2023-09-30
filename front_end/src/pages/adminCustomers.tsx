@@ -28,21 +28,21 @@ const adminCustomers = () => {
         <div className='flex h-full w-full'>
             <SideBar />
             <div className='flex flex-col'>
-                    <div className="left-0 px-4 py-4">
-                        {customers != null &&
-                            <div className="bg-white p-6 rounded-lg shadow-lg">
-                                <h2 className="text-xl font-bold mb-2 text-center">Total Customers: {customers.length}</h2>
-                            </div>
-                        }
-                    </div>
-                    <div>
+                <div className="left-0 px-4 py-4">
+                    {customers != null &&
+                        <div className="bg-white p-6 rounded-lg shadow-lg">
+                            <h2 className="text-xl font-bold mb-2 text-center">Total Customers: {customers.length}</h2>
+                        </div>
+                    }
+                </div>
+                <div>
                     <NewCustomerTable />
 
                 </div>
-                </div>
-
-
             </div>
+
+
+        </div>
     )
 }
 
