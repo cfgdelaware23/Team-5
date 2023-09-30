@@ -47,7 +47,16 @@ const AdminSales = () => {
                 </tbody>
                 </table>
             </div>  
+
+            <button
+        style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
+        >
+                Get A Healthy Food!
+            </button>
+
         </div>
+
+        
     );
 };
 
