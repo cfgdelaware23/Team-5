@@ -49,6 +49,8 @@ const UserUpdate = () => {
         setQualify(response.data.qualify);
         setDateCreated(response.data.createdAt);
         setIsAdmin(response.data.isAdmin);
+        document.querySelector("#admin-id").checked = response.data.isAdmin;
+        document.querySelector("#check-id").checked = response.data.qualify;
         // console.log(response.data.isAdmin);
         // console.log(isAdmin);
 
