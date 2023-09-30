@@ -25,7 +25,7 @@ function App() {
       <Route path="/transactions" element={<TransactionTable />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/submitfeedback" element={<SubmitFeedback />} />
-      <Route path="/admin/ustomers" element={<AdminCustomers />} />
+      <Route path="/admin/customers" element={<AdminCustomers />} />
       <Route path="/admin/feedback" element={<AdminFeedback />} />
       <Route path="/admin/index" element={<AdminIndex />} />
       <Route path="/admin/sales" element={<AdminSales />} />
