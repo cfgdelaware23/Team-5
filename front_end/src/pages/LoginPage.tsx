@@ -97,7 +97,7 @@ function LoginPage() {
                     onChange={e => setMemberId(e.target.value)} />
           </form>
           <div className='flex justify-center'>
-            <button className='bg-slate-700 text-white mx-1 font-medium w-1/5 hover:bg-slate-600' onClick={handleSubmit} >
+            <button className='bg-slate-700 text-white mx-1 font-medium w-1/5 hover:bg-slate-600 transition duration-100' onClick={handleSubmit} >
               Log In 
             </button>
           </div>
