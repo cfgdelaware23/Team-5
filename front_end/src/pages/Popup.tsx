@@ -34,12 +34,12 @@ function Popup({ closePopup}) {
      <div className="m-4">
         {product &&
           product.map((p) => (
-            <div key={p._id} className="bg-white p-6 rounded-lg shadow-lg">
+            <div key={p._id} className="bg-white px-3 rounded-lg shadow-lg text-center">
               <h2 className="text-xl font-bold mb-2">{p.name}</h2>
             </div>
           ))}
       </div>
-      <button onClick={closePopup}>Close X</button>
+        <button className="text-black text-center rounded-md shadow-sm bg-gray-400 px-3 py-1"onClick={closePopup}>Hide</button>
      </div>
   );
 }
