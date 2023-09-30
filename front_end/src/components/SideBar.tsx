@@ -11,7 +11,7 @@ const SideBar = () => {
             <header className="flex flex-col align-middle justify-center text-center" >
                {/* <Logo />  */}
                <div id="wellfare-logo">Logo goes here</div>
-               <div className="text-gray-100 italic font-medium">{user}</div>
+               <div className="text-gray-100 italic font-medium text-lg">{user}</div>
             </header>
             <nav className="flex flex-col p-2 text-white font-bold text-2xl">
                 <a className="hover:text-slate-200 hover:cursor-pointer" id='home'>Home</a>
