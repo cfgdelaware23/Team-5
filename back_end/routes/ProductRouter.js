@@ -24,13 +24,14 @@ router.get("/get_product/:id", async(request, res) => {
 
 router.POST("/update_product/:id", async(request, res) => {
     let id = request.body.id;
+    let quantity = request.body.quantitySold;
 
-    const product = await Product.findById(productId);
+    const product = await Product.findById(id);
     if (!product) {
         return res.status(404).json({ message: 'Product not found' });
     }
 
-    product.quantitySold += 1;
+    product.quantitySold += quantity;
 
     res.json({ mssg: "product incremented" })
     return;
