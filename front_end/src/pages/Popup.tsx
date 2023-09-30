@@ -1,8 +1,9 @@
 import React from 'react';
+import popup from 'react'
 
 import { useEffect, useState } from 'react'
 
-function Popup() {
+function Popup({text, closePopup}) {
   const [isOpen, setIsOpen] = useState(false);
   const [product, setProduct] = useState(null)
 
@@ -22,10 +23,11 @@ function Popup() {
   };
 
   return (
-    <div className={`popup ${isOpen ? 'open z-10 h-screen w-screen' : ''}`}>
-      <div className="popup-content">
-        <button onClick={togglePopup}>Close</button>
-      </div>
+    <div className="popup-container">
+     <div className="popup-body">
+      <h1>hey there</h1>
+      <button onClick={closePopup}>Close X</button>
+     </div>
     </div>
   );
 }
