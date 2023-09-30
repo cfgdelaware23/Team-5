@@ -58,7 +58,7 @@ const UserProducts = () => {
         </div>
       </div>
       <button
-          onClick={() => document.getElementById("popup").classList.toggle("open")}
+          // onClick={() => document.getElementById("popup").classList.toggle("open")}
           style={{
             backgroundColor: 'rgb(144,238,144)', 
             color: 'black', 
@@ -69,7 +69,7 @@ const UserProducts = () => {
       >
         Get a Healthy Food!
       </button>
-      <Popup />
+      {/* <Popup /> */}
     </div>
     </>
   );
