@@ -114,4 +114,37 @@ router.post("/feedback_create", async (request, res) => {
     }
 })
 
+router.put("/feedback_update/:id", async (request, res) => {
+    let passedInId = request.params.id;
+    let feedbackPositive = request.body.feedbackPositive
+    let feedbackDescription = request.body.feedbackDescription  
+    let productId = request.body.productId
+    let customerId = request.body.customerId
+
+    let feedbackData = {};
+    if (feedbackPositive !== undefined) {
+        feedbackData.feedbackPositive = feedbackPositive;
+    }
+    if (feedbackDescription !== undefined) {
+        feedbackData.feedbackDescription = feedbackDescription
+    }
+    if (productId !== undefined) {
+        feedbackData.productId = productId
+    }
+    if (customerId !== undefined) {
+        feedbackData.customerId = customerId
+    }
+    try {
+        let feedbackOld = await Feedback.findByIdAndUpdate(passedInId, feedbackData);
+        let newFeedBack = await Feedback.findById(passedInId);
+        res.status(200).json(newFeedBack);
+        
+    }
+    catch (err) {
+        res.status(400).json({error: "feedback not updated"});
+    }
+    return;
+
+});
+
 module.exports = router
