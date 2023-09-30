@@ -58,7 +58,7 @@ const AdminSales = () => {
                                     <td className="py-2 px-6 border-b text-center">{p.priceDiscount}</td>
                                     <td className="py-2 px-6 border-b text-center">
                                         <button
-                                            onClick={() => handleEditProduct(p.name)}
+                                            onClick={() => handleEditProduct(p._id)}
                                             className="text-red-700 underline"
                                             style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}>
                                             Edit

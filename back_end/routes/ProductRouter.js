@@ -91,24 +91,57 @@ router.post("/create_product/:name/:quantity/:full/:discount", async(request, re
 })
 
 // updates product
-router.put("/update_product/:id/:quantitySold", async(request, res) => {
-    let id = request.body.id;
+router.put("/update_product/:id", async(request, res) => {
+    let passedInId = request.params.id;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: 'no such product'})
+    let name = request.body.name;
+    let quantitySold = Number(request.body.quantitySold);
+    let priceFull = Number(request.body.priceFull);
+    let priceDiscount = Number(request.body.priceDiscount);
+
+    try {
+        const productInstance = await product.findById(passedInId);
+        if (name === undefined) {
+            name = productInstance.name
+        }
+        if (quantitySold === undefined) {
+            quantitySold = productInstance.quantitySold
+        }
+        if (priceFull === undefined) {
+            priceFull = productInstance.priceFull
+        }
+        if (priceDiscount === undefined) {
+            priceDiscount = productInstance.priceDiscount
+        }
+        let newProduct = await product.findByIdAndUpdate(passedInId, {
+            name, quantitySold, priceFull, priceDiscount
+        })
+
+        // Can be optimized (uneccessary multiple SQL queries), but this is fine for now
+        let updatedProduct = await product.findById(passedInId);
+        console.log(updatedProduct);
+        res.status(200).json(updatedProduct);
     }
-
-    let quantity = request.body.quantitySold;
-
-    const product = await product.findById(id);
-    if (!product) {
-        return res.status(404).json({ message: 'Product not found' });
+    catch (err) {
+        console.log(err);
+        res.status(400, "product not updated")
     }
-
-    product.quantitySold += quantity;
-
-    res.json({ mssg: "product incremented" })
     return;
+    // if (!mongoose.Types.ObjectId.isValid(id)) {
+    //     return res.status(404).json({error: 'no such product'})
+    // }
+
+    // let quantity = request.body.quantitySold;
+
+    // const product = await product.findById(id);
+    // if (!product) {
+    //     return res.status(404).json({ message: 'Product not found' });
+    // }
+
+    // product.quantitySold += quantity;
+
+    // res.json({ mssg: "product incremented" })
+    // return;
 })
 
 // Delete product w id
