@@ -6,7 +6,7 @@ const mongoose = require("mongoose")
 // routers
 const AdminRouter = require("./routes/AdminRouter.js")
 const CustomerRouter = require("./routes/CustomerRouter.js")
-const ProductRouter = require("./routes/AdminRouter.js")
+const ProductRouter = require("./routes/ProductRouter.js")
 
 // set up express app
 const app = express()
