@@ -113,11 +113,7 @@ function LoginPage() {
         }}>
           <UserSideBar/>
           <br></br>
-          <h1>Information</h1>
-          <p>Name: {name}</p>
-          <p>Zipcode: {zipCode}</p>
-          <p>Qualifies: {qualify.toString()}</p>
-          <p>Date Signed Up: {dateCreated.toString()}</p>
+          <h1 style={{ textAlign: 'center' }}>Welcome, {name}!</h1>
         </div>
       </div>
     )
@@ -133,11 +129,7 @@ function LoginPage() {
               marginLeft: "50px",
             }}>
               <br></br>
-              <h1>Information</h1>
-              <p>Name: {name}</p>
-              <p>Zipcode: {zipCode}</p>
-              <p>Qualifies: {qualify.toString()}</p>
-              <p>Date Signed Up: {dateCreated.toString()}</p>
+              <h1 style={{ textAlign: 'center' }}>Welcome, {name}!</h1>
             </div>
             </div>
           </div>
