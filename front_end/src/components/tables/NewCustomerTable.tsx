@@ -26,7 +26,7 @@ const NewCustomerTable = () => {
         <div className="flex justify-center items-center h-full">
             <div className="w-4/5vw mb-8 sm:mx-4 lg:mx-8">
                 <table className="min-w-full bg-white border border-gray-300">
-                    <tr>
+                    <tr style={{backgroundColor: 'rgb(214, 60, 35)'}}>
                         <th className="py-2 px-6 bg-blue-500 text-white">Name</th>
                         <th className="py-2 px-6 bg-blue-500 text-white">Qualify for Personalized Pricing</th>
                         <th className="py-2 px-6 bg-blue-500 text-white">Address</th>
