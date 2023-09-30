@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import "../App.css"
 import TransactionTable from '../components/TransactionTable'
 import CustomerTable from '../components/CustomerTable'
+import CustomerCount from '../components/CustomerCount'
 
 function adminCustomers() {
 
@@ -11,8 +12,8 @@ function adminCustomers() {
         
             <div>
             <h1>Customer Summary</h1>
-            <p></p>
-            </div>  
+            </div> 
+            <CustomerCount />
         <CustomerTable/>
             </div>
     )
