@@ -7,7 +7,7 @@ let customerSchema = new mongoose.Schema({
     },
     customerId: {
         type: Number,
-        required: true
+        required: false
     }, 
     qualify: {
         type: Boolean,
