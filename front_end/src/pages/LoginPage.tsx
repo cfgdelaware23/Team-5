@@ -24,16 +24,19 @@ function LoginPage() {
                     Member ID:
                 </div>
 
-                <input 
+                <input className="border-2 border-black-500"
                     name="inputMemberId"
                     value={memberId}
                     required={true}
                     onChange={e => setMemberId(e.target.value)} />
+                    <div>
                     <button 
                         onClick={goToSignUpPage}
                         >
                             Sign Up Here!
                         </button>
+                    </div>
+
             </div>
         </div>
     )

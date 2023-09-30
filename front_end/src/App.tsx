@@ -5,8 +5,7 @@ import SignupPage from './pages/signupPage'
 import LoginPage from './pages/LoginPage'
 import './App.css'
 import TransactionTable from './components/TransactionTable'
-// import SideBar from './components/SideBar'
-import LoginPage from './pages/LoginPage'
+import SideBar from './components/SideBar'
 
 
 function App() {
