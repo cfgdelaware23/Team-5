@@ -13,10 +13,10 @@ const SideBar = () => {
                 <div className="text-gray-100 italic font-medium text-lg">{user}</div>
             </header>
             <nav className="flex flex-col p-2 text-white font-bold text-2xl">
-                <a className="hover:text-slate-200 hover:cursor-pointer" id='home'>Home</a>
-                <a className="hover:text-slate-200 hover:cursor-pointer" id='sales'>Sales</a>
-                <a className="hover:text-slate-200 hover:cursor-pointer" id='feedback'>Feedback</a>
-                <a className="hover:text-slate-200 hover:cursor-pointer" id='customers'>Customers</a>
+                <a href='/admin/index' className="hover:text-slate-200 hover:cursor-pointer" id='home'>Home</a>
+                <a href='/admin/sales' className="hover:text-slate-200 hover:cursor-pointer" id='sales'>Sales</a>
+                <a href='/admin/feedback' className="hover:text-slate-200 hover:cursor-pointer" id='feedback'>Feedback</a>
+                <a href='/admin/customers' className="hover:text-slate-200 hover:cursor-pointer" id='customers'>Customers</a>
             </nav>
         </aside>
     );

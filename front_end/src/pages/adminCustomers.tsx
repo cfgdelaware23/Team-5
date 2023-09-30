@@ -13,8 +13,12 @@ function adminCustomers() {
             <div>
             <h1>Customer Summary</h1>
             </div> 
+            <div>
             <CustomerCount />
-        <CustomerTable/>
+            </div>
+            <div>
+                <CustomerTable/>
+            </div>
             </div>
     )
 }
