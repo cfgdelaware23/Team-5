@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import "../App.css"
-import TransactionTable from '../components/TransactionTable'
-import CustomerTable from '../components/CustomerTable'
+import NewCustomerTable from '../components/tables/NewCustomerTable'
 import CustomerCount from '../components/CustomerCount'
 import SideBar from '../components/AdminSideBar'
 
@@ -14,7 +13,7 @@ function adminCustomers() {
             <div className='flex flex-col'>
                 <h1>Customer Summary</h1>
                 <CustomerCount />
-                <CustomerTable />
+                <NewCustomerTable />
             </div>
         </div>
     )

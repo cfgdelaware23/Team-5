@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import SignupPage from './pages/signupPage'
 import LoginPage from './pages/loginPage'
 import './App.css'
-import TransactionTable from './components/TransactionTable'
+import NewTransactionTable from '../components/tables/NewTransactionTable'
 
 //import SideBar from './components/SideBar'
 import AdminCustomers from './pages/AdminCustomers'
