@@ -14,11 +14,6 @@ function LoginPage() {
     const [zipCode, setZipCode] = useState('')
     const [createdAt, setCreatedAt] = useState('')
 
-  const handleLogin = () => {
-    // Add your login logic here (e.g., authentication, redirection)
-    console.log('Logging in with member ID:', memberId);
-  };
-
   const goToSignUpPage = () => {
     navigate('/signup');
   };
@@ -50,20 +45,21 @@ function LoginPage() {
           </button>
         </div>
       </div>
+
+        <div>Name: {name}</div>
+        <div>Zipcode: {zipCode}</div>
+        <div>Qualify for lowering pricing: {qualify.toString()}</div>
+        <div>User Is Admin: {isAdmin.toString()}</div>
+        <div>User Member Since: {createdAt.toString()}</div>
+
     </div>
   );
-    // interface dataResponse {
-    //     qualify: boolean,
-    //     isAdmin: boolean,
-    //     name: string,
-    //     zipCode: string,
-    //     createdAt: string,
-    // }
 
-    function handleSubmit() {
+    function handleLogin() {
         axios.get(`http://localhost:4000/customer/retrieve_customer/${memberId}`, {
         }).then(function (response) {
             // response holds data
+            console.log(response.data, response.data.qualify);
             setQualify(response.data.qualify);
             setIsAdmin(response.data.isAdmin);
             setName(response.data.name);
