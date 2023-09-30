@@ -21,8 +21,8 @@ const AdminSideBar = () => {
             </header>
             <nav className="flex flex-col p-2 text-white font-bold lg:text-2xl sm:sm ">
                 {/* TODO: fix activeClassName and NavLink conflict */}
-                <li>
-                    <ul>
+                <li className="list-none">
+                    <ul> 
                         <NavLink to='/admin/index' className="hover:text-slate-200 hover:cursor-pointer" activeClassName="underline" id='home'>Home</NavLink> 
                     </ul>
                     <ul>
