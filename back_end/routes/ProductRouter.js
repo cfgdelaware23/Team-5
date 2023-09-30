@@ -1,6 +1,7 @@
 const express = require("express")
 const product = require("../models/product")
 const router = express.Router()
+const mongoose = require("mongoose")
 
 // for image processing
 const multer = require("multer") 
@@ -25,6 +26,11 @@ router.get("/get_product/:id", async(request, res) => {
     let passedInId = request.params.id;
     try {
         let product = await product.findById(passedInId);
+
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(404).json({error: 'product not found'})
+          }
+          
         console.log(product);
         res.status(200).json(product);
     } catch (err) {
