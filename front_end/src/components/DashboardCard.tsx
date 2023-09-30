@@ -2,8 +2,8 @@ import { useState } from "react";
 import "../App.css";
 
 interface DashboardCardProps {
-    header: string; 
-    data: any; 
+    header: string;
+    data: any;
 }
 
 const DashboardCard = (props: DashboardCardProps) => {

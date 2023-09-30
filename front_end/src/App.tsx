@@ -13,6 +13,7 @@ import AdminSales from './pages/adminSales'
 import UserProducts from './pages/userProducts'
 import SubmitFeedback from './pages/submitFeedback'
 import UserUpdate from "./pages/userUpdate"
+import ProductUpdate from "./pages/productUpdate"
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <Route path="/admin/sales" element={<AdminSales />} />
       <Route path="customer/products" element={<UserProducts />} />
       <Route path="edit/customer/:id" element={<UserUpdate/>} />
+      <Route path="edit/product/:id" element={<ProductUpdate/>} />
     </Routes>
     </BrowserRouter>
   )

@@ -30,8 +30,8 @@ const UserSideBar = () => {
 </nav>
 
 
-        </div>
-    );
+    </div>
+  );
 }
 
 export default UserSideBar;

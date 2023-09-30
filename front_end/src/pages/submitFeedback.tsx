@@ -57,12 +57,16 @@ function SubmitFeedback(){
                             className="border-2 border-black-500"
                             />
                         <div className='mx-2'>
-                            <label className="font-medium">Positive experience?</label>
+                            <label className="font-medium"
+                            style={{marginTop: "10px", marginBottom: "10px"}}
+                            >Positive experience?</label>
                             <input
                                 name="inputEBT"
                                 type="checkbox"
                                 checked={isPositive}
-                                onChange={e => setIsPositive(e.target.checked)} />
+                                onChange={e => setIsPositive(e.target.checked)}
+                                style={{marginLeft: "10px"}}
+                                />
                             <br></br>
                             <button className='bg-slate-700 text-white mx-1 font-medium hover:bg-slate-600' type="button" onClick={handleSubmit}>Submit Feedback Form</button>
                         </div>
