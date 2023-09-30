@@ -21,9 +21,6 @@ const AdminSales = () => {
         fetchProduct();
     }, []);
 
-    const showHealthyFood() => {
-
-    }
 
     return (
         <div className="flex justify-center items-center h-full">
