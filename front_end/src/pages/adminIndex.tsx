@@ -4,6 +4,7 @@ import '../App.css'
 import AdminSideBar from '../components/AdminSideBar'
 import Welcome from '../components/Welcome'
 import DashboardCard from '../components/DashboardCard'
+import DashboardGrid from '../components/DashboardGrid'
 
 function AdminIndex() {
   // TODO: display data for quick links
@@ -18,11 +19,7 @@ function AdminIndex() {
       <AdminSideBar />
       <div className='flex flex-col'>
         <Welcome />
-        {/* <DashboardGrid /> */}
-        <DashboardCard 
-          header='Quick Links' 
-          data=''
-          />
+        <DashboardGrid />
       </div>
     </div>
   )

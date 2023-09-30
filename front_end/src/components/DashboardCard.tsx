@@ -10,7 +10,7 @@ const DashboardCard = (props: DashboardCardProps) => {
     // const [cardHeader, setCardHeader] = useState("Header");
     return (
         <div className="bg-gray-200 w-full rounded p-2">
-            <span className="p-2 font-bold text-lg">{props.header}</span>
+            <span className="p-2 font-bold sm:text-lg lg:text-2xl">{props.header}</span>
             <div className="flex justify-center align-middle p-10">
                 {props.data}
             </div>
