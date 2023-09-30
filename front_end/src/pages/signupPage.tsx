@@ -18,51 +18,37 @@ function SignupPage() {
                 User Signup
             </h1>
             <div>
-                <label >
                     <div>
                         First Name:
                     </div>
 
-                    <textarea
+                    <input
                         name="inputFirstName"
-                        rows={1}
-                        cols={40}
                         value={firstName}
                         required = {true}
                         onChange={e => setFirstName(e.target.value)} />
-                </label>
-                <label>
                     <div >
                         Last Name:
                     </div>
-                    <textarea
+                    <input
                         name="inputSecondName"
-                        rows={1}
-                        cols={40}
                         value={lastName}
                         required = {true}
                         onChange={e => setLastName(e.target.value)} />
-                </label>
-                <label>
                     <div>
                         Zip Code:
                     </div>
-                    <textarea
+                    <input
                         name="inputZipCode"
-                        rows={1}
-                        cols={10}
                         value={zipCode}
                         onChange={e => setZipCode(e.target.value)} />
-                </label>
             </div>
             <div>
                 <p> Please select all that apply:</p>
             </div>
             <div>
                 <label>
-                    
                         EBT:
-                    
                     <input
                         name="inputEBT"
                         type="checkbox"
