@@ -27,7 +27,7 @@ function LoginPage() {
                         name="inputFirstName"
                         value={memberId}
                         required = {true}
-                        onChange={e => setZipCode(e.target.value)} />
+                        onChange={e => setMemberId(e.target.value)} />
                     <div >
                         Zipcode:
                     </div>
