@@ -1,14 +1,14 @@
 // import { useState } from 'react'
 import '../App.css'
 import DashboardGrid from '../components/DashboardGrid'
-import SideBar from '../components/SideBar'
+import AdminSideBar from '../components/AdminSideBar'
 import Welcome from '../components/Welcome'
 
 function AdminIndex() {
 
   return (
     <div className='flex h-full w-full'>
-      <SideBar />
+      <AdminSideBar />
       <div className='flex flex-col'>
         <Welcome />
         <DashboardGrid />
