@@ -19,9 +19,6 @@ return (
             <nav className="flex flex-col p-2 text-white font-bold lg:text-2xl sm:sm ">
                 {/* TODO: fix activeClassName and NavLink conflict */}
                 <li className="list-none">
-                    <ul> 
-                        <a href='/admin/index' className="hover:text-slate-200 hover:cursor-pointer" id='home'>Home</a> 
-                    </ul>
                     <ul>
                         <a href='/admin/sales' className="hover:text-slate-200 hover:cursor-pointer" id='sales'>Sales</a>
                     </ul>

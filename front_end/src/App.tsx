@@ -26,7 +26,6 @@ function App() {
       {<Route path="/admin/feedback" element={<AdminFeedback />} />}
       <Route path="/admin/index" element={<AdminIndex />} />
       <Route path="/admin/sales" element={<AdminSales />} />
-      <Route path="customer/index" element={<UserIndex />} />
       <Route path="customer/products" element={<UserProducts />} />
     </Routes>
     </BrowserRouter>
