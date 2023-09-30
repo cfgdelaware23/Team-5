@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import '../App.css'
+import Header from '../NavBar.js';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -36,6 +37,7 @@ function SignupPage() {
     return (
 
         <div >
+            <Header />
             <h1>
                 User Signup
             </h1>

@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import '../App.css'
+import { Navbar } from "../components/Navbar";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -36,6 +37,7 @@ function SignupPage() {
     return (
 
         <div >
+            <Navbar/>
             <h1>
                 User Signup
             </h1>
