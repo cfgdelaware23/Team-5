@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import "../App.css"
 
 
-const ProductTable = () => {
+const NewProductTable = () => {
    const [products, setProduct] = useState(null)
 
 
@@ -45,5 +45,5 @@ const ProductTable = () => {
 }
 
 
-export default ProductTable
+export default NewProductTable
 
