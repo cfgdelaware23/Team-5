@@ -35,6 +35,10 @@ function SignupPage() {
         navigate("/customer/products");
     }
 
+    const goToLoginPage = () => {
+        navigate('/');
+      };
+
     return (
 
         <div style={{ textAlign: 'center', fontFamily: 'Helvetica' }}>
@@ -89,7 +93,7 @@ function SignupPage() {
                         onChange={e => setWIC(e.target.checked)} />
                 </label>
             </div>
-            <div>
+            <div className="justify-center">
                 <button type="button" onClick={() => {
                     setFirstName('');
                     setLastName('');
@@ -102,6 +106,14 @@ function SignupPage() {
                 <button type="button" onClick={handleSubmit} style={{ backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '10px', marginRight: '20px' }}>
                     Submit
                 </button>
+            </div>
+            <div className="py-3">
+            <button
+            onClick={goToLoginPage}
+          style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
+          >
+            Already have an account?
+          </button>
             </div>
         </div>
     )
