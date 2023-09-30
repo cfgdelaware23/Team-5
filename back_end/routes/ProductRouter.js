@@ -2,7 +2,8 @@ const express = require("express")
 const product = require("../models/product")
 const router = express.Router()
 
-const multer = require("multer") // for image processing
+// for image processing
+const multer = require("multer") 
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
 
@@ -11,6 +12,10 @@ const upload = multer({ storage: storage })
 // Gets all products
 router.get("/", async(req, res) => {
     const allProducts = await product.find({}).sort({ quantitySold: -1 })
+
+    if (!allProducts) {
+        res.status(404).json({mssg: "products not found"})
+    }
 
     res.status(200).json(allProducts)
 })
@@ -23,7 +28,7 @@ router.get("/get_product/:id", async(request, res) => {
         console.log(product);
         res.status(200).json(product);
     } catch (err) {
-        res.json({ mssg: "product not found" })
+        res.status(404).json({ mssg: "product not found" })
         return;
     }
     return;
@@ -42,6 +47,11 @@ router.post("/create_product/:name/:quantity/:full/:discount", async(request, re
             if (priceFull) { priceFull },
             if (priceDiscount) { priceDiscount }
         })
+
+        if (!new_product) {
+            res.status(404).json({ mssg: "new product not created" })
+        }
+
         console.log(new_product);
 
         res.status(200).json(new_product);
