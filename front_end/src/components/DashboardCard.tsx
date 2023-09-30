@@ -9,7 +9,7 @@ interface DashboardCardProps {
 const DashboardCard = (props: DashboardCardProps) => {
     // const [cardHeader, setCardHeader] = useState("Header");
     return (
-        <div className="p-3 bg-gray-200">
+        <div className="flex justify-center align-middle p-10 rounded bg-gray-200 w-full">
             {props.header}
             {props.data}
         </div>
