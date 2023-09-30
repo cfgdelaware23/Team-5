@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import '../app.css'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 function SignupPage() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [zipCode, setZipCode] = useState('')
-    const [EBT, setEBT] = useState(false)
-    const [SNAP, setSNAP] = useState(false)
+    const [EBT_SNAP, setEBT_SNAP] = useState(false);
 
     const navigate = useNavigate();
 
@@ -17,6 +17,21 @@ function SignupPage() {
         navigate("/transactions");
     }
 
+    function handleSubmit() {
+        console.log(lastName)
+        console.log(zipCode)
+        axios.post("http://localhost:4000/customer/save_customer", {
+            name: firstName + " " + lastName,
+            qualify: EBT_SNAP,
+            address: zipCode,
+            isAdmin: false,
+        }).then(function (response) {
+            console.log(response);
+
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
 
     return (
 
@@ -60,35 +75,20 @@ function SignupPage() {
                     <input
                         name="inputEBT"
                         type="checkbox"
-                        checked={EBT}
-                        onChange={e => setEBT(e.target.checked)} />
-                </label>
-            </div>
-            <div>
-                <label>
-                        SNAP:  
-                    <input
-                        name="inputSNAP"
-                        type="checkbox"
-                        checked={SNAP}
-                        onChange={e => setSNAP(e.target.checked)} />
+                        checked={EBT_SNAP}
+                        onChange={e => setEBT_SNAP(e.target.checked)} />
                 </label>
             </div>
             <div>
                 <button type="button" onClick={() => {
-                    setFirstName('')
-                    setLastName('')
-                    setZipCode('')
-                    setEBT(false)  
-                    setSNAP(false)
+                    setFirstName('');
+                    setLastName('');
+                    setZipCode('');
+                    setEBT_SNAP(false);
                 }}>
                     Clear
                 </button>
-                <button type="button" onClick={() => {
-                    console.log(firstName)
-                    console.log(lastName)
-                    console.log(zipCode)
-                }}>
+                <button type="button" onClick={handleSubmit}>
                     Submit
                 </button>
             </div>
