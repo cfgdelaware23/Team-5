@@ -6,7 +6,7 @@ const router = express.Router()
 router.get("/", async(req, res) => {
     const allProducts = await product.find({}).sort({ quantitySold: -1 })
 
-    res.status(200).json(prodallProductsucts)
+    res.status(200).json(allProducts)
 })
 
 router.get("/get_product/:id", async(request, res) => {
@@ -22,7 +22,7 @@ router.get("/get_product/:id", async(request, res) => {
     return;
 })
 
-router.POST("/update_product/:id", async(request, res) => {
+router.post("/update_product/:id", async(request, res) => {
     let id = request.body.id;
     let quantity = request.body.quantitySold;
 
