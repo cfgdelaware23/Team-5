@@ -32,6 +32,7 @@ const AdminSales = () => {
         <div className="flex justify-center items-center h-full">
             <AdminSideBar />
             <div className="w-4/5vw mb-8 sm:mx-4 lg:mx-8">
+            <h1 className="text-3xl font-bold mb-2 text-left">Products Summary</h1>
                 <table className="min-w-full bg-white border border-gray-300">
                 <thead>
                     <tr>

@@ -10,6 +10,18 @@ const upload = multer({ storage: storage })
 
 // routes
 
+// Gets random product
+router.get("/get_random_product", async(req, res) => {
+    const randomNum = Math.floor(Math.random() * 10)
+    const prod = await product.find({}).limit(1).skip(randomNum).exec()
+
+    if (!prod) {
+        res.status(404).json({mssg: "products not found"})
+    }
+    
+    res.status(200).json(prod)
+})
+
 // Gets all products
 router.get("/", async(req, res) => {
     const allProducts = await product.find({}).sort({ quantitySold: -1 })
