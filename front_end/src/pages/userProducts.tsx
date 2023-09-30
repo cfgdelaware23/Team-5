@@ -32,7 +32,7 @@ const UserProducts = () => {
       <UserSideBar/>
       <div className='flex w-screen justify-center align-center m-5'>
       <div>
-    <button onClick={() => setOpen(true)}> Click to Open       Popup</button>
+    <button onClick={() => setOpen(true)}>Show a Product</button>
 {open ? <Popup text="Hello there!" closePopup={() => setOpen(false)} /> : null}
    </div>
         <div className="flex justify-center items-center h-full">
