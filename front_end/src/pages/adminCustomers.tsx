@@ -25,9 +25,10 @@ const adminCustomers = () => {
 
 
     return (
-        <div className='flex h-full w-full'>
+        <div className="flex h-screen w-screen ">
             <SideBar />
-            <div className='flex flex-col'>
+            <div className="w-4/5vw mb-8 sm:mx-4 lg:mx-8">
+                <div className="h-screen overflow-scroll relative p-4">
                 <div className="left-0 px-4 py-4">
                     {customers != null &&
                         <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -39,6 +40,9 @@ const adminCustomers = () => {
                     <NewCustomerTable />
 
                 </div>
+
+                </div>
+
             </div>
 
 
