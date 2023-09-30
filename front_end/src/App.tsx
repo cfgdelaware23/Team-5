@@ -4,15 +4,14 @@ import React, { useState } from 'react'
 import SignupPage from './pages/signupPage'
 import LoginPage from './pages/LoginPage'
 import './App.css'
-import NewTransactionTable from '../components/tables/NewTransactionTable'
 
 //import SideBar from './components/SideBar'
 import AdminCustomers from './pages/AdminCustomers'
 import AdminFeedback from './pages/AdminFeedback'
 import AdminIndex from './pages/AdminIndex'
-import AdminSales from './pages/AdminSales'
+import AdminSales from './pages/adminSales'
 import UserIndex from './pages/UserIndex'
-import UserProducts from './pages/UserProducts'
+import UserProducts from './pages/userProducts'
 import SubmitFeedback from './pages/submitFeedback'
 
 function App() {
