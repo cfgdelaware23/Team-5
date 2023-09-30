@@ -21,6 +21,7 @@ const AdminSales = () => {
         fetchProduct();
     }, []);
 
+
     return (
         <div className="flex justify-center items-center h-full">
             <AdminSideBar />
@@ -47,7 +48,10 @@ const AdminSales = () => {
                 </tbody>
                 </table>
             </div>  
+
         </div>
+
+        
     );
 };
 
