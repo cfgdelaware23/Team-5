@@ -35,22 +35,6 @@ function LoginPage() {
                             Sign Up Here!
                         </button>
             </div>
-            <div>
-                <button type="button" onClick={() => {
-                    console.log(memberId)
-                    onRegisterPress()
-                }}>
-                    Register New Member
-                </button>
-            </div>
-            <div>
-                <button type="button" onClick={() => {
-                    console.log(memberId)
-                    onLoginPress()
-                }}>
-                    Submit
-                </button>
-            </div>
         </div>
     )
 }
