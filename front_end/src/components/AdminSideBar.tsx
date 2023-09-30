@@ -1,17 +1,15 @@
 import React, { FC, useState } from "react";
 import "../App.css";
 import Logo from "../assets/wellfare-logo.png"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
         
 
 const AdminSideBar = () => {
     const [presentTab, setPresentTab] =  useState('home'); 
     const [user, setUser] = useState('User');
+    const location = useLocation();
     const pages = ['home', 'sales', 'feedback', 'customers'];
     
-    const updatePresentPage = () => {
-        document.querySelector("#sales").classList.add('underline');
-    } 
 
     return (
         <aside className="flex flex-col justify-center align-middle p-4 w-1/5vw h-screen bg-slate-500 text-gray-100">
@@ -23,16 +21,16 @@ const AdminSideBar = () => {
                 {/* TODO: fix activeClassName and NavLink conflict */}
                 <li className="list-none">
                     <ul> 
-                        <NavLink to='/admin/index' className="hover:text-slate-200 hover:cursor-pointer" activeClassName="underline" id='home'>Home</NavLink> 
+                        <a href='/admin/index' className="hover:text-slate-200 hover:cursor-pointer" id='home'>Home</a> 
                     </ul>
                     <ul>
-                        <NavLink onClick={updatePresentPage} href='/admin/sales' className="hover:text-slate-200 hover:cursor-pointer" activeClassName="underline" id='sales'>Sales</NavLink>
+                        <a href='/admin/sales' className="hover:text-slate-200 hover:cursor-pointer" id='sales'>Sales</a>
                     </ul>
                     <ul>
-                        <NavLink href='/admin/feedback' className="hover:text-slate-200 hover:cursor-pointer" activeClassName="underline" id='feedback'>Feedback</NavLink>
+                        <a href='/admin/feedback' className="hover:text-slate-200 hover:cursor-pointer" id='feedback'>Feedback</a>
                     </ul>
                     <ul>
-                        <NavLink to='/admin/customers' className="hover:text-slate-200 hover:cursor-pointer" activeClassName="underline" id='customers'>Customers </NavLink>
+                        <a to='/admin/customers' className="hover:text-slate-200 hover:cursor-pointer" id='customers'>Customers </a>
                     </ul>
                 </li>
             </nav>
