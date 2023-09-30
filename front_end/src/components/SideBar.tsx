@@ -7,7 +7,7 @@ const SideBar = () => {
     const [user, setUser] = useState('Last, First');
     
     return (
-        <aside className="flex flex-col justify-center align-middle p-5 h-screen bg-slate-500 text-gray-100">
+        <aside className="flex flex-col justify-center align-middle p-4 w-1/5vw h-screen bg-slate-500 text-gray-100">
             <header className="flex flex-col align-middle justify-center text-center" >
                 <img className="h-auto w-40 " id="wellfare-logo" src={Logo} alt="Wellfare Logo"/>
                 <div className="text-gray-100 italic font-medium text-lg">{user}</div>
