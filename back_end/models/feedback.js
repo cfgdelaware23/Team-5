@@ -12,6 +12,10 @@ let feedbackSchema = new mongoose.Schema({
     feedbackDescription: {
         type: String,
         required: false
+    },
+    productId: {
+        type: String,
+        required: false
     }
 }, 
 {timestamps: true})
