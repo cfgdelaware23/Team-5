@@ -3,7 +3,7 @@ import '../app.css'
 
 
 
-function SignupPage() {
+function LoginPage() {
     const [memberId, setMemberId] = useState('')
 
 
@@ -28,4 +28,4 @@ function SignupPage() {
     )
 }
 
-export default SignupPage
+export default LoginPage

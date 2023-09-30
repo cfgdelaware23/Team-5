@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import SignupPage from './pages/SignupPage'
+import SignupPage from './pages/signupPage'
+import LoginPage from './pages/LoginPage'
 import './App.css'
 import TransactionTable from './components/TransactionTable'
 // import SideBar from './components/SideBar'
@@ -13,6 +14,7 @@ function App() {
     <Routes>
       <Route path="/" element={<SignupPage />} />
       <Route path="/transactions" element={<TransactionTable />} />
+      <Route path="/login" element={<LoginPage />} />
     </Routes>
     </BrowserRouter>
   )
