@@ -9,9 +9,11 @@ interface DashboardCardProps {
 const DashboardCard = (props: DashboardCardProps) => {
     // const [cardHeader, setCardHeader] = useState("Header");
     return (
-        <div className="flex justify-center align-middle p-10 rounded bg-gray-200 w-full">
-            {props.header}
-            {props.data}
+        <div className="bg-gray-200 w-full rounded p-2">
+            <span className="p-2 font-bold text-lg">{props.header}</span>
+            <div className="flex justify-center align-middle p-10">
+                {props.data}
+            </div>
         </div>
     );
 }

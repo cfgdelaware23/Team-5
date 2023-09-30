@@ -9,6 +9,7 @@ function SignupPage() {
     const [lastName, setLastName] = useState('')
     const [zipCode, setZipCode] = useState('')
     const [EBT_SNAP, setEBT_SNAP] = useState(false);
+    const [WIC, setWIC] = useState(false);
 
     const navigate = useNavigate();
 
@@ -22,7 +23,7 @@ function SignupPage() {
         console.log(zipCode)
         axios.post("http://localhost:4000/customer/save_customer", {
             name: firstName + " " + lastName,
-            qualify: EBT_SNAP,
+            qualify: EBT_SNAP, WIC,
             address: zipCode,
             isAdmin: false,
         }).then(function (response) {
@@ -36,7 +37,7 @@ function SignupPage() {
 
     return (
 
-        <div style={{textAlign: 'center'}}>
+        <div style={{textAlign: 'center', fontFamily: 'helvetica-w01-bold,helvetica-w02-bold,helvetica-lt-w10-bold,sans-serif;'}}>
             <h1 style={{ color: 'red', fontWeight: 'bold'}}>
                 User Signup
             </h1>
@@ -82,21 +83,14 @@ function SignupPage() {
                         checked={EBT_SNAP}
                         onChange={e => setEBT_SNAP(e.target.checked)} />
                 </label>
-                <label>
-                        SNAP:
-                    <input
-                        name="inputEBT"
-                        type="checkbox"
-                        checked={EBT_SNAP}
-                        onChange={e => setEBT_SNAP(e.target.checked)} />
-                </label>
+        
                 <label>
                         WIC:
                     <input
                         name="inputEBT"
                         type="checkbox"
-                        checked={EBT_SNAP}
-                        onChange={e => setEBT_SNAP(e.target.checked)} />
+                        checked={WIC}
+                        onChange={e => setWIC(e.target.checked)} />
                 </label>
             </div>
             <div>
@@ -105,6 +99,7 @@ function SignupPage() {
                     setLastName('');
                     setZipCode('');
                     setEBT_SNAP(false);
+                    setWIC(false);
                 }} style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px',marginRight: '20px'}}>
                     Clear
                 </button>

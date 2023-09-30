@@ -26,17 +26,17 @@ const NewProductTable = () => {
        <div className="grid grid-cols-2 w-4/5vw h-full mb-8 sm:mx-4 lg:mx-8 gap-4">
            <table className="shadow-lg bg-white">
                    <tr>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Name</th>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Quantity Sold</th>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Price</th>
-                       <th className="bg-blue-100 border text-left px-8 py-4">Discounted Price</th>
+                       <th className="py-2 px-6 bg-blue-500 text-white">Name</th>
+                       <th className="py-2 px-6 bg-blue-500 text-white">Quantity Sold</th>
+                       <th className="py-2 px-6 bg-blue-500 text-white">Price</th>
+                       <th className="py-2 px-6 bg-blue-500 text-white">Discounted Price</th>
                    </tr>
                    {products && products.map(p => (
                        <tr key={p._id}>
-                           <td className="border-black">{p.name}</td>
-                           <td className="border-black">{p.quantitySold}</td>
-                           <td className="border-black">{p.priceFull}</td>
-                           <td className="border-black">{p.priceDiscount}</td>
+                           <td className="py-2 px-6 border-b">{p.name}</td>
+                           <td className="py-2 px-6 border-b text-center">{p.quantitySold}</td>
+                           <td className="py-2 px-6 border-b text-center">{p.priceFull}</td>
+                           <td className="py-2 px-6 border-b text-center">{p.priceDiscount}</td>
                        </tr>
                    ))}
            </table>

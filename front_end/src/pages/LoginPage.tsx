@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../app.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import SideBar from '../components/AdminSideBar';
+import UserSideBar from '../components/UserSideBar';
 
 function LoginPage() {
   const [memberId, setMemberId] = useState('');
@@ -30,14 +32,14 @@ function LoginPage() {
                     <div >
         <button
           onClick={handleSubmit}
-          style={{ color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
+          style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
         >
           Login Here
         </button>
         </div>
           <button
             onClick={goToSignUpPage}
-          style={{ color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
+          style={{backgroundColor: 'rgb(214,60,35)', color: 'black', marginTop: '10px', marginLeft: "auto", marginRight: "auto", display: "block"}}
           >
             Sign Up Here!
           </button>
@@ -47,8 +49,10 @@ function LoginPage() {
   else {
     return (
       <>
-    <div id="login-page-div">
-        <div>
+      <div id="login-page-div">
+        <div style={{
+        }}>
+          <UserSideBar/>
           <br></br>
           <h1>Information</h1>
           <p>Name: {name}</p>

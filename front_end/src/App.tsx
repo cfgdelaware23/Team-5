@@ -5,7 +5,7 @@ import SignupPage from './pages/signupPage'
 import LoginPage from './pages/LoginPage'
 import './App.css'
 
-//import SideBar from './components/SideBar'
+import AdminSideBar from './components/AdminSideBar'
 import AdminCustomers from './pages/AdminCustomers'
 import AdminIndex from './pages/AdminIndex'
 import AdminSales from './pages/adminSales'
