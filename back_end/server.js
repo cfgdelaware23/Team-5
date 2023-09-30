@@ -38,7 +38,7 @@ app.use("/products", ProductRouter)
 mongoose.connect(process.env.MONGODB)
     .then(() => {
         app.listen(process.env.PORT, () => {
-            console.log("Listening in port 4000 and connexted to db")
+            console.log("Listening in port 4000 and connected to db")
         })
     })
     .catch((err) => {
