@@ -26,10 +26,10 @@ const NewFeedbackTable = () => {
        <div className="grid grid-cols-2 w-4/5vw h-full mb-8 sm:mx-4 lg:mx-8 gap-4">
            <table className="shadow-lg bg-white">
                    <tr>
-                       <th className="py-2 px-6 bg-blue-500 text-white">Customer ID</th>
-                       <th className="py-2 px-6 bg-blue-500 text-white">Product ID</th>
-                       <th className="py-2 px-6 bg-blue-500 text-white">Positive Feedback</th>
-                       <th className="py-2 px-6 bg-blue-500 text-white">Feedback Description</th>
+                       <th className="py-2 px-6 bg-red-700 text-white">Customer ID</th>
+                       <th className="py-2 px-6 bg-red-700 text-white">Product ID</th>
+                       <th className="py-2 px-6 bg-red-700 text-white">Positive Feedback</th>
+                       <th className="py-2 px-6 bg-red-700 text-white">Feedback Description</th>
                    </tr>
                    {feedback && feedback.map(f => (
                        <tr key={f._id}>

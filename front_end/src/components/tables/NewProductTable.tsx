@@ -26,10 +26,10 @@ const NewProductTable = () => {
        <div className="grid grid-cols-2 w-4/5vw h-full mb-8 sm:mx-4 lg:mx-8 gap-4">
            <table className="shadow-lg bg-white">
                    <tr>
-                       <th className="py-2 px-6 bg-blue-500 text-white">Name</th>
-                       <th className="py-2 px-6 bg-blue-500 text-white">Quantity Sold</th>
-                       <th className="py-2 px-6 bg-blue-500 text-white">Price</th>
-                       <th className="py-2 px-6 bg-blue-500 text-white">Discounted Price</th>
+                       <th className="py-2 px-6 bg-red-700 text-white">Name</th>
+                       <th className="py-2 px-6 bg-red-700 text-white">Quantity Sold</th>
+                       <th className="py-2 px-6 bg-red-700 text-white">Price</th>
+                       <th className="py-2 px-6 bg-red-700 text-white">Discounted Price</th>
                    </tr>
                    {products && products.map(p => (
                        <tr key={p._id}>
