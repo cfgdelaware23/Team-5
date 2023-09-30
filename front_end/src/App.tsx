@@ -10,6 +10,7 @@ import AdminCustomers from './pages/adminCustomers'
 import AdminFeedback from './pages/adminFeedback'
 import AdminIndex from './pages/adminIndex'
 import AdminSales from './pages/adminSales'
+import UserIndex from './pages/userIndex'
 
 function App() {
 
@@ -19,10 +20,12 @@ function App() {
       <Route path="/" element={<LoginPage />} />
       <Route path="/transactions" element={<TransactionTable />} />
       <Route path="/signup" element={<SignupPage />} />
-      <Route path="/admin/Customers" element={<AdminCustomers />} />
-      <Route path="/admin/Feedback" element={<AdminFeedback />} />
-      <Route path="/admin/Index" element={<AdminIndex />} />
-      <Route path="/adminSales" element={<AdminSales />} />
+      <Route path="/admin/ustomers" element={<AdminCustomers />} />
+      <Route path="/admin/feedback" element={<AdminFeedback />} />
+      <Route path="/admin/index" element={<AdminIndex />} />
+      <Route path="/admin/sales" element={<AdminSales />} />
+      <Route path="customer/index" element={<UserIndex />} />
+      <Route path="customer/"
     </Routes>
     </BrowserRouter>
   )
