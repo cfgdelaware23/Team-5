@@ -148,7 +148,7 @@ router.put("/feedback_update/:id", async (request, res) => {
 });
 
 // Delete customer w id
-router.delete("/delete_customer/:id", async(request, res) => (
+router.delete("/delete_customer/:id", async(request, res) => {
 
     const {id} = request.params;
 
@@ -164,6 +164,6 @@ router.delete("/delete_customer/:id", async(request, res) => (
 
   res.status(200).json(customer)
 
-))
+})
 
 module.exports = router
