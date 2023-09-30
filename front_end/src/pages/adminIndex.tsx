@@ -1,8 +1,8 @@
 // import { useState } from 'react'
 import '../App.css'
-import DashboardGrid from '../components/DashboardGrid'
 import AdminSideBar from '../components/AdminSideBar'
 import Welcome from '../components/Welcome'
+import DashboardCard from '../components/DashboardCard'
 
 function AdminIndex() {
   return (
@@ -11,7 +11,7 @@ function AdminIndex() {
       <div className='flex flex-col'>
         <Welcome />
         {/* <DashboardGrid /> */}
-
+        <DashboardCard header='Resources' data='' />
       </div>
     </div>
   )
