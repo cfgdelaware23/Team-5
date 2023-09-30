@@ -8,17 +8,16 @@ function LoginPage() {
   const navigate = useNavigate();
   const [loaded, setLoaded] = useState(false);
   const [zipCode, setZipCode] = useState('')
-
-  const handleLogin = () => {
-    // Add your login logic here (e.g., authentication, redirection)
-    console.log('Logging in with member ID:', memberId);
-  };
+    const [name, setName] = useState('')
+    const [dateCreated, setDateCreated] = useState('')
+    const [qualify, setQualify] = useState(false);
 
   const goToSignUpPage = () => {
     navigate('/signup');
   };
 
-  return (
+    if (!loaded) {
+      return (
     <div id="login-page-div">
       <div>
       <h1 style={{ color: 'black', fontStyle: "bold", fontSize: '24px', textAlign: "center", marginBottom: "10px"}}>Login</h1>
@@ -29,15 +28,8 @@ function LoginPage() {
                         required = {true}
                         onChange={e => setMemberId(e.target.value)} />
                     <div >
-                        Zipcode:
-                    </div>
-                    <input className="border-2 border-black-500"
-                        name="inputZipCode"
-                        value={zipCode}
-                        onChange={e => setZipCode(e.target.value)} />
-                        <div>
         <button
-          onClick={handleLogin}
+          onClick={handleSubmit}
           style={{ color: 'black', marginTop: '25px', marginLeft: "auto", marginRight: "auto", display: "block"}}
         >
           Login Here
@@ -51,21 +43,32 @@ function LoginPage() {
           </button>
       </div>
     </div>
-  );
-    // interface dataResponse {
-    //     qualify: boolean,
-    //     isAdmin: boolean,
-    //     name: string,
-    //     zipCode: string,
-    //     createdAt: string,
-    // }
-
+  )}
+  else {
+    return (
+      <>
+    <div id="login-page-div">
+        <div>
+          <br></br>
+          <h1>Information</h1>
+          <p>Name: {name}</p>
+          <p>Zipcode: {zipCode}</p>
+          <p>Qualifies: {qualify.toString()}</p>
+          <p>Date Signed Up: {dateCreated.toString()}</p>
+        </div>
+        </div>
+        </>
+    )
+  }
     function handleSubmit() {
         axios.get(`http://localhost:4000/customer/retrieve_customer/${memberId}`, {
         }).then(function (response) {
             // response holds data
+            console.log(response)
             setZipCode(response.data.address);
-            console.log(response.data);
+            setName(response.data.name);
+            setQualify(response.data.qualify);
+            setDateCreated(response.data.createdAt);
             setLoaded(true);
 
         }).catch(function (error) {
