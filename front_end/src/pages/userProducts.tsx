@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
+import UserSideBar from '../components/UserSideBar';
 
 const UserProducts = () => {
   const [products, setProducts] = useState(null);
@@ -22,6 +23,8 @@ const UserProducts = () => {
   }, []);
 
   return (
+    <>
+    <UserSideBar/>
     <div className="flex justify-center items-center h-full">
       <div className="w-4/5vw mb-8 sm:mx-4 lg:mx-8">
         <div className="flex justify-end mb-4">
@@ -52,6 +55,7 @@ const UserProducts = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

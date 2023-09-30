@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import UserSideBar from '../components/UserSideBar';
 
 function SubmitFeedback(){
     const [memberId, setMemberId] = useState('');
@@ -27,6 +28,7 @@ function SubmitFeedback(){
 
 return(
     <>
+    <UserSideBar/>
     <div id="submit-feedback-div">
         <div>
     <h1>Submit Feedback</h1>
