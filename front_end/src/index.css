@@ -34,7 +34,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #A8EB12;
+  background-color: #2f71da;
+  color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
