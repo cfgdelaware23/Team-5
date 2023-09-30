@@ -36,13 +36,13 @@ function SignupPage() {
     return (
 
         <div >
-            <h1>
+            <h1 style={{ color: 'red', fontWeight: 'bold' }}>
                 User Signup
             </h1>
             <div>
                 <button 
                 onClick={goToTransactionPage}
-                color="white"
+                style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px' }}
                 >Go to transactions</button>
                     <div>
                         First Name:
@@ -88,10 +88,10 @@ function SignupPage() {
                     setLastName('');
                     setZipCode('');
                     setEBT_SNAP(false);
-                }}>
+                }} style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px',marginRight: '20px'}}>
                     Clear
                 </button>
-                <button type="button" onClick={handleSubmit}>
+                <button type="button" onClick={handleSubmit} style={{ backgroundColor: 'grey', color: 'black', marginTop: '10px',marginRight: '20px'}}>
                     Submit
                 </button>
             </div>
