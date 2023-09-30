@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../app.css'
+import '../App.css'
 
 
 
@@ -29,7 +29,7 @@ function LoginPage({}) {
                     Member ID:
                 </div>
 
-                <input
+                <input 
                     name="inputMemberId"
                     value={memberId}
                     required={true}
