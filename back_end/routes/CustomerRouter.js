@@ -159,7 +159,7 @@ router.delete("/delete_customer/:id", async(request, res) => {
     const cust = await Customer.findOneAndDelete({_id: id})
 
     if(!cust) {
-        return res.status(400).json({error: 'No such workout'})
+        return res.status(400).json({error: 'No such customer'})
     }
 
   res.status(200).json(customer)
