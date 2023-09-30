@@ -45,10 +45,10 @@ const UserProducts = () => {
               <div key={p._id} className="bg-white p-6 rounded-lg shadow-lg">
                 <h2 className="text-xl font-bold mb-2">{p.name}</h2>
                 <p className={`text-lg mb-2 ${showDiscounted ? 'line-through' : ''}`}>
-                  Regular Price: {p.priceFull}
+                  Regular Price: ${p.priceFull}
                 </p>
                 {showDiscounted && (
-                  <p className="text-lg mb-2">Discounted Price: {p.priceDiscount}</p>
+                  <p className="text-lg mb-2">Discounted Price: ${p.priceDiscount}</p>
                 )}
               </div>
             ))}
