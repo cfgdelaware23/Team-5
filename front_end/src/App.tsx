@@ -12,9 +12,9 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<SignupPage />} />
+      <Route path="/" element={<LoginPage />} />
       <Route path="/transactions" element={<TransactionTable />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
     </Routes>
     </BrowserRouter>
   )
