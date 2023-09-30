@@ -2,4 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@layer utilities {
+  .w-4\/5vw {
+    width: 80vw;
+  }
+  .w-1\/5vw {
+    width: 20vw;
+  }
+}

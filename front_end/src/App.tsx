@@ -6,7 +6,10 @@ import LoginPage from './pages/LoginPage'
 import './App.css'
 import TransactionTable from './components/TransactionTable'
 import SideBar from './components/SideBar'
-
+import AdminCustomers from './pages/adminCustomers'
+import AdminFeedback from './pages/adminFeedback'
+import AdminIndex from './pages/adminIndex'
+import AdminSales from './pages/adminSales'
 
 function App() {
 
@@ -16,6 +19,10 @@ function App() {
       <Route path="/" element={<LoginPage />} />
       <Route path="/transactions" element={<TransactionTable />} />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/admin/Customers" element={<AdminCustomers />} />
+      <Route path="/admin/Feedback" element={<AdminFeedback />} />
+      <Route path="/admin/Index" element={<AdminIndex />} />
+      <Route path="/adminSales" element={<AdminSales />} />
     </Routes>
     </BrowserRouter>
   )
