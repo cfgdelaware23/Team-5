@@ -9,7 +9,6 @@ function adminSales() {
     <div className='flex h-full w-full'>
       <AdminSideBar />
       <div className='flex flex-col'>
-        <Welcome />
       </div>
     </div>
   )

@@ -10,7 +10,8 @@ function AdminIndex() {
       <AdminSideBar />
       <div className='flex flex-col'>
         <Welcome />
-        <DashboardGrid />
+        {/* <DashboardGrid /> */}
+
       </div>
     </div>
   )
