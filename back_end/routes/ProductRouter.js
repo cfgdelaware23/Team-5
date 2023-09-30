@@ -6,7 +6,7 @@ const router = express.Router()
 router.get("/", async(req, res) => {
     const allProducts = await product.find({}).sort({ quantitySold: -1 })
 
-    res.status(200).json(prodallProductsucts)
+    res.status(200).json(allProducts)
 })
 
 router.get("/get_product/:id", async(request, res) => {
