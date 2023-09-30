@@ -1,40 +1,38 @@
 import { useEffect, useState } from 'react'
+
 import "../App.css"
 
-function TransactionTable() {
-    const [data, setData] = useState([])
+const TransactionTable = () => {
+    const [feedback, setFeedback] = useState(null)
 
-    const fetchData = () => {
-        fetch(`https://dummyjson.com/products`)
-            .then((response) => response.json())
-            .then((realdata) => {
-                console.log(realdata)
-                setData(realdata.products)
-                console.log(data)
-            })
-            .catch((err) => {
-                console.log(err.message)
-            })
-    }
     useEffect(() => {
-        fetchData()
+        const fetchFeedback = async() => {
+            const response = await fetch("http://localhost:4000/admin/feedback_all");
+            const json = await response.json()
+
+            if (response.ok) {
+                setFeedback(json)
+            }
+        }
+        fetchFeedback()
     }, [])
 
     return (
         <div>
             <table className="shadow-lg bg-white">
                     <tr>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Customer</th>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Rating</th>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Description</th>
-                        <th className="bg-blue-100 border text-left px-8 py-4">Product</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Customer ID</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Product Id</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Positive Feedback</th>
+                        <th className="bg-blue-100 border text-left px-8 py-4">Feedback Description</th>
                     </tr>
-                    {data.map((item, index) => (
-                        <tr key={index}>
-                            <td className="border-black">{item.customerId}</td>
-                            <td className="border-black">{item.feedbackPositive}</td>
-                            <td className="border-black">{item.feedbackDescription}</td>
-                            <td className="border-black">{item.productId}</td>
+                    {feedback && feedback.map(f => (
+                        <tr key={f._id}>
+                            <td className="border-black">{f.customerId}</td>
+                            <td className="border-black">{f.productId}</td>
+                            <td className="border-black">{f.feedbackPositive}</td>
+                            <td className="border-black">{f.feedbackDescription}</td>
+
                         </tr>
                     ))}
             </table>
