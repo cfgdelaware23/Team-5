@@ -27,7 +27,7 @@ function LoginPage() {
         <div>
           <p>Zipcode: {zipCode}</p>
           <p>Qualifies: {qualify.toString()}</p>
-          <p>Member Since: {dateCreated.toString()}</p>
+          <p>Member Since: {dateCreated.toString().substring(0,10)}</p>
         </div>
       </div>
     </div>
@@ -126,7 +126,7 @@ function LoginPage() {
           <div>
             <p>Zipcode: {zipCode}</p>
             <p>Qualifies: {qualify.toString()}</p>
-            <p>Member Since: {dateCreated.toString()}</p>
+            <p>Member Since: {dateCreated.toString().substring(0,10)}</p>
           </div>
         </div>
       </div>
