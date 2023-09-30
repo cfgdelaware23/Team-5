@@ -6,7 +6,7 @@ import LoginPage from './pages/LoginPage'
 import './App.css'
 
 import AdminSideBar from './components/AdminSideBar'
-import AdminCustomers from './pages/AdminCustomers'
+import AdminCustomers from './pages/adminCustomers'
 import AdminIndex from './pages/adminIndex'
 import AdminFeedback from './pages/adminFeedback'
 import AdminSales from './pages/adminSales'

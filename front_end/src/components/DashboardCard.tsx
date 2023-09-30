@@ -3,7 +3,7 @@ import "../App.css";
 
 interface DashboardCardProps {
     header: string;
-    data: any;
+    data: string;
 }
 
 const DashboardCard = (props: DashboardCardProps) => {
@@ -11,7 +11,7 @@ const DashboardCard = (props: DashboardCardProps) => {
     return (
         <div className="bg-gray-200 w-full rounded p-2">
             <span className="p-2 font-bold sm:text-lg lg:text-2xl">{props.header}</span>
-            <div className="flex justify-center align-middle p-10">
+            <div className="flex justify-center align-middle">
                 {props.data}
             </div>
         </div>

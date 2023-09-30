@@ -1,11 +1,10 @@
 import { useState } from 'react'
 
-const Welcome = () => {
-    const [user] = useState("User");
+const Welcome = (props) => {
     return (
         <>
             <h1 className='sm:mx-5 lg:mx-10 my-8 font-extrabold text-4xl'>
-                Welcome back, <span className='italic'>{user}</span>
+                Welcome back, <span className='italic'>{props.name}</span>
             </h1>
         </>
     )

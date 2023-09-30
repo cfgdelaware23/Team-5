@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import UserSideBar from '../components/UserSideBar';
 import AdminSideBar from '../components/AdminSideBar';
+import Welcome from '../components/Welcome';
+import DashboardCard from '../components/DashboardCard';
 
 function LoginPage() {
   const [memberId, setMemberId] = useState('');
@@ -19,6 +21,18 @@ function LoginPage() {
     navigate('/signup');
   };
 
+  const userInformation = (
+    <div className='flex flex-col'>
+      <div id="login-page-div">
+        <div>
+          <p>Zipcode: {zipCode}</p>
+          <p>Qualifies: {qualify.toString()}</p>
+          <p>Member Since: {dateCreated.toString()}</p>
+        </div>
+      </div>
+    </div>
+  );
+  
   if (!loaded) {
     return (
         // <div className='flex flex-col w-screen h-screen justify-center items-top text-center'>
@@ -83,7 +97,6 @@ function LoginPage() {
         //     </div>
         // </div>
 
-
       
       <div className='flex flex-col justify-center align-middle w-screen h-screen text-center' id="login-page-div">
           <h1 className='font-extrabold text-4xl m-4 uppercase'>Log In</h1>
@@ -108,16 +121,13 @@ function LoginPage() {
   )}
   else if (loaded && !isAdmin) {
     return (
-      <div id="login-page-div">
-        <div style={{
-        }}>
-          <UserSideBar/>
-          <br></br>
-          <h1>Information</h1>
-          <p>Name: {name}</p>
-          <p>Zipcode: {zipCode}</p>
-          <p>Qualifies: {qualify.toString()}</p>
-          <p>Date Signed Up: {dateCreated.toString()}</p>
+      <div className='flex flex-col'>
+        <div id="login-page-div">
+          <div>
+            <p>Zipcode: {zipCode}</p>
+            <p>Qualifies: {qualify.toString()}</p>
+            <p>Member Since: {dateCreated.toString()}</p>
+          </div>
         </div>
       </div>
     )
@@ -127,22 +137,16 @@ function LoginPage() {
       <>
         <div className='flex h-full w-full justify-left align-middle'>
           <AdminSideBar />
-          <div className='flex flex-col'>
-          <div id="login-page-div">
-            <div style={{
-              marginLeft: "50px",
-            }}>
-              <br></br>
-              <h1>Information</h1>
-              <p>Name: {name}</p>
-              <p>Zipcode: {zipCode}</p>
-              <p>Qualifies: {qualify.toString()}</p>
-              <p>Date Signed Up: {dateCreated.toString()}</p>
-            </div>
+          <div>
+            <Welcome name={name}/>
+            <div className='mx-8'>
+              <DashboardCard 
+                header='User Information'
+                data={userInformation}
+                />
             </div>
           </div>
         </div>
-
       </>
     )
   }
@@ -164,4 +168,4 @@ function LoginPage() {
     }
   }
    
-export default LoginPage;
+export default LoginPage
