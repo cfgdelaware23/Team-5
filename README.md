@@ -7,7 +7,7 @@ We were chosen to help work with the nonprofit Wellfare, which aims to solve foo
 The backend is built with Express, NodeJS and MongoDB. We went with Express because of the ease of learning for those who did not know Express already. MongoDB also is fast to implement and perfect for our use case of a collection of users/products/feedback.
 
 ## Frontend Architecture:
-The frontend is built with TypeScript and React. A lot of people on our team knew React already, and it's also very easy to get up and running with it. 
+The frontend is built with TypeScript and React. A lot of people on our team knew React already, and it's also very easy to get up and running with it. We also styled our components using Tailwind CSS, a tool which we were less familiar with but nonetheless learned how to integrate.
 
 ## How To Run The Application:
 The application is broken into two parts, `front_end`, and `back_end`. 
