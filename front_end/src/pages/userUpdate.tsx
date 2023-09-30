@@ -66,7 +66,7 @@ const UserUpdate = () => {
                 <div className='flex flex-col'>
                     <div className="left-0 px-4 py-4">
                         <div className='flex flex-col w-screen h-screen justify-center align-middle text-center'>
-                            <h1 className='font-extrabold text-4xl m-4 uppercase'>Sign Up</h1>
+                            <h1 className='font-extrabold text-4xl m-4 uppercase'>Update User</h1>
                             <form className='flex flex-col align-middle items-center font-bold text-left'>
                                 <label>Name</label>
                                 <input id="name-id" className="border-2 border-black-500"

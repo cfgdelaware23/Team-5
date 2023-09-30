@@ -7,19 +7,18 @@ import DashboardCard from '../components/DashboardCard'
 import DashboardGrid from '../components/DashboardGrid'
 
 function AdminIndex() {
-  // TODO: display data for quick links
-  // const resources = [
-  //   {text: 'Website', url:'https://www.wellfare.org/'},
-  //   {text: '', url:''},
-  //   {text: '', url:''},
-  // ];
+
 
   return (
-    <div className='flex h-full w-full'>
+    <div className='flex h-full w-full justify-left align-middle'>
       <AdminSideBar />
-      <div className='flex flex-col'>
-        <Welcome />
-        <DashboardGrid />
+      <div>
+        <Welcome name={name} />
+        <div className='mx-8'>
+          <DashboardCard
+            header='User Information' data=''
+          />
+        </div>
       </div>
     </div>
   )

@@ -28,21 +28,18 @@ const adminCustomers = () => {
         <div className="flex h-screen w-screen ">
             <SideBar />
             <div className="w-4/5vw mb-8 sm:mx-4 lg:mx-8">
-                <div className="h-screen overflow-scroll relative p-4">
-                <div className="left-0 px-4 py-4">
-                    {customers != null &&
-                        <div className="bg-white p-6 rounded-lg shadow-lg">
-                            <h2 className="text-xl font-bold mb-2 text-center">Total Customers: {customers.length}</h2>
-                        </div>
-                    }
+                <div className="h-screen overflow-scroll relative py-4">
+                    <div className="left-0 px-4 py-4">
+                        {customers != null &&
+                            <div className="bg-white p-6 rounded-lg shadow-lg">
+                                <h2 className="text-xl font-bold mb-2 text-center">Total Customers: {customers.length}</h2>
+                            </div>
+                        }
+                    </div>
+                    <div>
+                        <NewCustomerTable />
+                    </div>
                 </div>
-                <div>
-                    <NewCustomerTable />
-
-                </div>
-
-                </div>
-
             </div>
 
 
