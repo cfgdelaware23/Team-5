@@ -1,12 +1,12 @@
 const express = require("express")
-const Product = require("../models/product")
+const product = require("../models/product")
 const router = express.Router()
 
 // routes
 router.get("/", async(req, res) => {
-    const products = await products.find({}).sort({ quantitySold: -1 })
+    const allProducts = await product.find({}).sort({ quantitySold: -1 })
 
-    res.status(200).json(products)
+    res.status(200).json(prodallProductsucts)
 })
 
 router.get("/get_product/:id", async(request, res) => {
