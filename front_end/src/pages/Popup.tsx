@@ -3,17 +3,24 @@ import popup from 'react'
 
 import { useEffect, useState } from 'react'
 
-function Popup({text, closePopup}) {
+function Popup({ closePopup}) {
   const [isOpen, setIsOpen] = useState(false);
   const [product, setProduct] = useState(null)
 
   useEffect(() => {
     const fetchProduct = async() => {
-        const response = await fetch("http://localhost:4000/customer/get_random_product");
+        const response = await fetch("http://localhost:4000/products/get_random_product");
         const json = await response.json()
         if (response.ok) {
+            console.log(product)
             setProduct(json)
         }
+        console.log(product)
+        console.log("test")
+        {product &&
+          product.map((p) => (
+            console.log(p)
+          ))}
     }
     fetchProduct()
 }, [])
@@ -30,7 +37,6 @@ function Popup({text, closePopup}) {
           product.map((p) => (
             <div key={p._id} className="bg-white p-6 rounded-lg shadow-lg">
               <h2 className="text-xl font-bold mb-2">{p.name}</h2>
-                Regular Price: ${p.priceFull}
             </div>
           ))}
       </div>
