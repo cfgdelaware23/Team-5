@@ -28,7 +28,7 @@ const UserProducts = () => {
   return (
     <>
       <UserSideBar/>
-      <div className='flex justify-center align-center m-5'>
+      <div className='flex w-screen justify-center align-center m-5'>
         <button
             // onClick={() => document.getElementById("popup").classList.toggle("open")}
             className='bg-green-600 w-1/6 text-center'
