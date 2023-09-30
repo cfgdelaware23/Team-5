@@ -5,6 +5,7 @@ import axios from 'axios';
 import LoginImage from '../../public/wellfare-alt-logo.png'
 
 
+
 function SignupPage() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -28,12 +29,13 @@ function SignupPage() {
             address: zipCode,
             isAdmin: false,
         }).then(function (response) {
+            alert("Your id is " + response.data._id + ". Use this to login!");
             console.log(response);
 
         }).catch(function (error) {
             console.log(error);
         })
-        navigate("/customer/products");
+        navigate("/");
     }
 
     const goToLoginPage = () => {
