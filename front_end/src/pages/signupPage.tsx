@@ -29,6 +29,7 @@ function SignupPage() {
             address: zipCode,
             isAdmin: false,
         }).then(function (response) {
+            alert("Your id is " + response.data._id + ". Use this to login!");
             console.log(response);
 
         }).catch(function (error) {
@@ -38,7 +39,6 @@ function SignupPage() {
     }
 
     const goToLoginPage = () => {
-        alert("Your id is ");
         navigate('/');
       };
 
