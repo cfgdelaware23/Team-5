@@ -19,8 +19,16 @@ The application is broken into two parts, `front_end`, and `back_end`.
 4. In the `front_end` folder, run `npm run dev` to start the server.
 5. You should now be able to access the frontend on the port showing in the terminal where you ran `npm run dev`
 
-### Common Bugs/Fixes
-    1. TailwindCSS not building as expected after installation
-        - Fix: `npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch`
-    2. Unwanted node modules in multiple branches
-        - Fix: npx npkill
+## Common Bugs/Fixes
+ 1. TailwindCSS not building as expected after installation
+    - `npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch`
+ 2. Unwanted node modules in multiple branches
+    - `npx npkill`
+
+## Plans for future developments:
+   - Continue implementing accessibility features
+   - Improve mobile-version of dashboards
+   - Implement language translations to accommodate non-English speakers 
+   - Migrate to an SQL/PostgreSQL database (MongoDB was partly used for convenience)
+   - Add improved data visualization for insight on customer preferences and improved personalization (D3 library was under consideration)
+
