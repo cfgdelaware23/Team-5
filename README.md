@@ -1,4 +1,4 @@
-# Team-5
+# Team-5 (DataWell)
 
 # Objective
 We were chosen to help work with the nonprofit Wellfare, which aims to solve food insecurity and aims to reshape produce consumption and nutrition in low-income communities around the country. Our challenge was to use technology to develop a tool to create a seamless in-person customer experience, focusing on personalized pricing and membership capabilities. Additionally, this tool would not only enhance the shopping experience for customers but also those on the administrative side, allowing both sides to benefit and encouraging smoother communication among the Wellfare community.
